@@ -13,6 +13,7 @@ class ImageCarousel extends HTMLElement {
           width: 100%;
           box-sizing: border-box;
           user-select: none;
+          margin-bottom: 1rem;
         }
         .carousel-container {
           position: relative;
