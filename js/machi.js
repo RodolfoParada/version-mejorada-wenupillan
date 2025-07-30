@@ -12,7 +12,7 @@ class Machi extends HTMLElement {
           background-color: #ffeb3b; /* fondo amarillo */
           padding: 2rem;
           gap: 2rem;
-          margin-bottom: 8rem;
+        
         }
 
         .texto {

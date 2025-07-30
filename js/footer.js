@@ -7,15 +7,57 @@ class Footer extends HTMLElement {
     const shadow = this.attachShadow({ mode: 'open' });
     shadow.innerHTML = `
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"> 
-      <link rel="stylesheet" href="css/footer.css"/>
 
-      <footer class="footer text-white py-4 fixed-bottom bg-dark">
+      <style>
+      .footer {
+    background-color: #25688b26;
+    color: #F0F6FD;
+    height: 225px;
+    text-align: center;
+     margin-top: -60px;
+  
+  }
+  
+  .logo-wenupillan {
+  width: 140px;
+  height: 40px;
+}
+
+.kit {
+  width: 240px;
+  height: 60px;
+}
+.sercotec {
+  width: 245px;
+  height: 60px;
+}
+
+  .iconos {
+    width: 25px;
+    height: 25px;   
+   
+  }
+
+.icono-dorado {
+ filter: invert(55%) sepia(79%) saturate(372%) hue-rotate(355deg) brightness(95%) contrast(92%);
+}
+
+  @media (max-width: 579px) {
+    .footer {
+      height: 168px; /* Ajusta la altura a tus necesidades */
+      padding: 0px 0; /* Agrega un poco de espacio interno para aumentar la altura */
+      text-align: center; /* Centra el contenido en el footer */
+    }
+  }
+      </style>
+ 
+      <footer class="footer text-white py-4 bg-dark">
         <div class="container">
           <div class="row text-center">
 
             <!-- Columna 1: Logo -->
             <div class="col-3 d-flex flex-column align-items-center"> 
-              <img src="assets/footer/Logo-Wenupillan.png" class="img-item logo-wenupillan mb-2" alt="Logo" title="Logo">
+              <img src="assets/footer/Logo-Wenupillan.png" class="img-item logo-wenupillan mb-2" alt="Logo" title="Logo"   style="height: 30px; width: auto; display: block;">
             
             <a href="https://www.facebook.com/WenuPillanMolco/" target="_blank" class="text-decoration-none text-white">  
               <div class="d-flex flex-row align-items-center mb-1">

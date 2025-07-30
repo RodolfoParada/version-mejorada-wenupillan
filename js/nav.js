@@ -6,25 +6,31 @@ class Navegacion extends HTMLElement {
 
   connectedCallback() {
 
-     const rutaActual = window.location.pathname;
+  const rutaActual = window.location.pathname;
 
-    // Asocia cada página con su imagen
-    let imagenFondo = "../assets/nav/default.png"; // por defecto
-
+    // Mapea ruta a imagen fondo con rutas absolutas para evitar error de carga
+    let imagenFondo = "/assets/nav/default.png";
     if (rutaActual.includes("index.html") || rutaActual === "/" || rutaActual === "/index") {
-      imagenFondo = "../assets/nav/Volcan.png";
+      imagenFondo = "/assets/nav/azul.jpg";
     } else if (rutaActual.includes("nosotros.html")) {
-      imagenFondo = "../assets/nav/Bosque.png";
+      imagenFondo = "/assets/nav/gris.jpg";
     } else if (rutaActual.includes("cervezas.html")) {
-      imagenFondo = "../assets/cervezas/nav-nosotros.jpg";
+      imagenFondo = "/assets/nav/mandarina.jpg";
     } else if (rutaActual.includes("restaurant.html")) {
-      imagenFondo = "../assets/nav/Playa.png";
-    }else if (rutaActual.includes("tienda.html")) {
-      imagenFondo = "../assets/nav/Playa.png";
-    }else if (rutaActual.includes("contacto.html")) {
-      imagenFondo = "../assets/nav/Playa.png";
+      imagenFondo = "/assets/nav/negro.jpg";
+    } else if (rutaActual.includes("tienda.html")) {
+      imagenFondo = "/assets/nav/verde.jpg";
+    } else if (rutaActual.includes("contacto.html")) {
+      imagenFondo = "/assets/nav/violeta.jpg";
+    } else if (rutaActual.includes("machi.html")) {
+      imagenFondo = "/assets/nav/violeta.jpg";
+    } else if (rutaActual.includes("toqui.html")) {
+      imagenFondo = "/assets/nav/violeta.jpg";
+    } else if (rutaActual.includes("weichafe.html")) {
+      imagenFondo = "/assets/nav/violeta.jpg";
+    } else if (rutaActual.includes("lonko.html")) {
+      imagenFondo = "/assets/nav/violeta.jpg";
     }
-
 
     this.shadowRoot.innerHTML = `
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
@@ -39,7 +45,7 @@ class Navegacion extends HTMLElement {
 nav.navbar {
    padding-top: 2rem;
   padding-bottom: 2rem;
-  background-image: url("../assets/nav/Volcan.png");
+  background-image: url('${imagenFondo}');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -81,7 +87,7 @@ width: 100%;
   font-weight: bold;
 }
 
-dropdown-menu {
+.dropdown-menu {
   position: absolute;
   background-color: white;
   color: black;
@@ -107,14 +113,14 @@ dropdown-menu {
 }
 
       </style> 
-   <nav class="navbar navbar-expand-lg navbar-light fixed-top color px-3 position-relative" style="height: 400px; background-image: url('../assets/nav/Volcan.png'); background-size: cover; background-position: center;">
+   <nav class="navbar navbar-expand-lg navbar-light fixed-top color px-3 position-relative" style="height: 400px; background-size: cover; background-position: center;">
   
   <!-- Logo centrado y flotando sobre el fondo -->
-  <div style="position: absolute; top: 20px; left: 50%; transform: translateX(-50%); z-index: 10;">
-    <a href="#">
-      <img src="../assets/nav/Logo.png" alt="Logo" style="height: 80px;" />
-    </a>
-  </div>
+ <div style="position: absolute; top: 20px; left: 50%; transform: translateX(-50%); z-index: 10; height: 80px; display: flex; align-items: center;">
+  <a href="#">
+    <img src="../assets/nav/Logo.png" alt="Logo" style="height: 80px; max-height: 80px; width: auto; display: block;" />
+  </a>
+</div>
 
   <div class="container-fluid position-relative" style="height: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
     <!-- Botón hamburguesa -->

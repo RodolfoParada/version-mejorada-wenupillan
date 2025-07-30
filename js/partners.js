@@ -14,7 +14,6 @@ class PartnerButton extends HTMLElement {
           font-family: Arial, sans-serif;
           text-align: center;
           padding: 1rem;
-          margin-bottom: 10rem;
           background-color: #EEEEEE; /* gris claro, puedes cambiar a otro */
           width: 100%;
           box-sizing: border-box; /* para que el padding no haga overflow */
