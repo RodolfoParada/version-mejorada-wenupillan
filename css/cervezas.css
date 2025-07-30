@@ -1,0 +1,18 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  height: 100%;
+  overflow-x: hidden; /* evita scroll horizontal */
+}
+
+main {
+  min-height: 100vh;
+  overflow-y: auto;
+  padding-bottom: 4rem;
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}

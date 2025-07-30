@@ -16,7 +16,7 @@ class Navegacion extends HTMLElement {
     } else if (rutaActual.includes("nosotros.html")) {
       imagenFondo = "../assets/nav/Bosque.png";
     } else if (rutaActual.includes("cervezas.html")) {
-      imagenFondo = "../assets/nav/Ciudad.png";
+      imagenFondo = "../assets/cervezas/nav-nosotros.jpg";
     } else if (rutaActual.includes("restaurant.html")) {
       imagenFondo = "../assets/nav/Playa.png";
     }else if (rutaActual.includes("tienda.html")) {
@@ -28,8 +28,85 @@ class Navegacion extends HTMLElement {
 
     this.shadowRoot.innerHTML = `
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-      <link rel="stylesheet" href="css/nav.css"/>
+     
+
+      <style> 
+      nav.navbar {
+  background-color: transparent !important;
   
+}
+
+nav.navbar {
+   padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-image: url("../assets/nav/Volcan.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+   /* Muy importante para que crezca con el contenido */
+  height: auto;
+  overflow: visible;
+}  
+.nav-link {
+  position: relative;
+  color: white !important;
+  text-decoration: none;
+  font-weight: normal;
+  padding: 6px 12px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  border: 1px solid white;
+  color: #f8f9fa;
+}
+
+.nav-link.active {
+  font-weight: bold;
+  border: 1px solid white;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+width: 100%;
+}
+
+.nav-link:hover {
+   color: #f8f9fa;
+}
+
+.nav-link.active {
+  font-weight: bold;
+}
+
+dropdown-menu {
+  position: absolute;
+  background-color: white;
+  color: black;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-top: 0.5rem;
+  z-index: 1000;
+  min-width: 200px;
+}
+
+.dropdown-item {
+  padding: 10px 15px;
+  display: block;
+  color: black;
+  text-decoration: none;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+}
+  .dropdown-toggle::after {
+  display: none !important;
+}
+
+      </style> 
    <nav class="navbar navbar-expand-lg navbar-light fixed-top color px-3 position-relative" style="height: 400px; background-image: url('../assets/nav/Volcan.png'); background-size: cover; background-position: center;">
   
   <!-- Logo centrado y flotando sobre el fondo -->
@@ -50,7 +127,17 @@ class Navegacion extends HTMLElement {
       <ul class="navbar-nav gap-4 mb-3">
         <li class="nav-item"><a class="nav-link text-white fw-bold" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link text-white fw-bold" href="nosotros.html">Nosotros</a></li>
-        <li class="nav-item"><a class="nav-link text-white fw-bold" href="cervezas.html">Cervezas</a></li>
+        <li class="nav-item dropdown">
+           <a class="nav-link dropdown-toggle text-white fw-bold" href="#" id="cervezasDropdown">
+             Cervezas
+           </a>
+           <ul class="dropdown-menu" id="submenu-cervezas" style="display: none;">
+              <li><a class="dropdown-item" href="machi.html">Machi Pale Ale 5.2</a></li>
+              <li><a class="dropdown-item" href="toqui.html">Toqui Irish Red Ale 6.5</a></li>
+              <li><a class="dropdown-item" href="weichafe.html">Wichafe IPA 7.2</a></li>
+              <li><a class="dropdown-item" href="lonko.html">Lonko Porter 8.0</a></li>
+           </ul>
+        </li>
         <li class="nav-item"><a class="nav-link text-white fw-bold" href="restaurant.html">Restaurant</a></li>
         <li class="nav-item"><a class="nav-link text-white fw-bold" href="tienda.html">Tienda</a></li>
         <li class="nav-item"><a class="nav-link text-white fw-bold" href="contacto.html">Contacto</a></li>
@@ -80,6 +167,16 @@ links.forEach(link => {
   }
 }); 
    
+
+// Dropdown para Cervezas
+const dropdownToggle = this.shadowRoot.getElementById("cervezasDropdown");
+const submenu = this.shadowRoot.getElementById("submenu-cervezas");
+
+dropdownToggle.addEventListener("click", (e) => {
+  e.preventDefault(); // Evita navegación
+  submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+});
+
   } 
 }
 
