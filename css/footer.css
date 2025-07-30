@@ -1,0 +1,46 @@
+.footer {
+    background-color: #25688b26;
+    color: #F0F6FD;
+    height: 225px;
+    text-align: center;
+    margin: 0;
+  }
+  
+  .logo-wenupillan {
+  width: 140px;
+  height: 40px;
+}
+
+.kit {
+  width: 240px;
+  height: 60px;
+}
+.sercotec {
+  width: 245px;
+  height: 60px;
+}
+
+  .iconos {
+    width: 25px;
+    height: 25px;   
+   
+  }
+
+.icono-dorado {
+ filter: invert(55%) sepia(79%) saturate(372%) hue-rotate(355deg) brightness(95%) contrast(92%);
+}
+
+  @media (max-width: 579px) {
+    .footer {
+      height: 168px; /* Ajusta la altura a tus necesidades */
+      padding: 0px 0; /* Agrega un poco de espacio interno para aumentar la altura */
+      text-align: center; /* Centra el contenido en el footer */
+    }
+  }
+
+
+  
+  
+
+
+
