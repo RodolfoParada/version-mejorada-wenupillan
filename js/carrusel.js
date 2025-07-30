@@ -14,6 +14,7 @@ class ImageCarousel extends HTMLElement {
           box-sizing: border-box;
           user-select: none;
           margin-bottom: 1rem;
+          margin-top: 1rem;
         }
         .carousel-container {
           position: relative;
