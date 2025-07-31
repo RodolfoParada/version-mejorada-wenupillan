@@ -46,6 +46,7 @@ class Toqui extends HTMLElement {
           max-width: 100%;
           height: auto;
           border-radius: 12px;
+          margin-right: -2rem;
         }
 
         @media (max-width: 768px) {
@@ -57,6 +58,7 @@ class Toqui extends HTMLElement {
           .imagen {
             justify-content: center;
             margin-top: 1rem;
+        
           }
 
           .texto {
