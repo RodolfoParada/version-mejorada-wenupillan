@@ -117,7 +117,7 @@ class Navegacion extends HTMLElement {
                 <ul class="dropdown-menu" id="submenu-cervezas" style="display: none;">
                   <li><a class="dropdown-item" href="${basePath}/machi.html">Machi Pale Ale 5.2</a></li>
                   <li><a class="dropdown-item" href="${basePath}/toqui.html">Toqui Irish Red Ale 6.5</a></li>
-                  <li><a class="dropdown-item" href="${basePath}/weichafe.html">Wichafe IPA 7.2</a></li>
+                  <li><a class="dropdown-item" href="${basePath}/weichafe.html">Weichafe IPA 7.2</a></li>
                   <li><a class="dropdown-item" href="${basePath}/lonko.html">Lonko Porter 8.0</a></li>
                 </ul>
               </li>
