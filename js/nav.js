@@ -116,11 +116,11 @@ width: 100%;
    <nav class="navbar navbar-expand-lg navbar-light fixed-top color px-3 position-relative" style="height: 400px; background-size: cover; background-position: center;">
   
   <!-- Logo centrado y flotando sobre el fondo -->
- <div style="position: absolute; top: 20px; left: 50%; transform: translateX(-50%); z-index: 10; height: 80px; display: flex; align-items: center;">
-  <a href="#">
-    <img src="../assets/nav/Logo.png" alt="Logo" style="height: 80px; max-height: 80px; width: auto; display: block;" />
-  </a>
-</div>
+  <div style="position: absolute; top: 20px; left: 50%; transform: translateX(-50%); z-index: 10;">
+    <a href="#">
+      <img src="../assets/nav/Logo.png" alt="Logo" style="height: 80px;" />
+    </a>
+  </div>
 
   <div class="container-fluid position-relative" style="height: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
     <!-- Botón hamburguesa -->
@@ -183,6 +183,13 @@ dropdownToggle.addEventListener("click", (e) => {
   submenu.style.display = submenu.style.display === "block" ? "none" : "block";
 });
 
+// Cerrar dropdown al hacer click fuera (fuera del submenu y del toggle)
+window.addEventListener("click", (e) => {
+  const path = e.composedPath();
+  if (!path.includes(submenu) && !path.includes(dropdownToggle)) {
+    submenu.style.display = "none";
+  }
+});
   } 
 }
 

@@ -56,7 +56,7 @@ class Footer extends HTMLElement {
           <div class="row text-center">
 
             <!-- Columna 1: Logo -->
-            <div class="col-3 d-flex flex-column align-items-center"> 
+            <div class="col-4 d-flex flex-column align-items-center"> 
               <img src="assets/footer/Logo-Wenupillan.png" class="img-item logo-wenupillan mb-2" alt="Logo" title="Logo"   style="height: 30px; width: auto; display: block;">
             
             <a href="https://www.facebook.com/WenuPillanMolco/" target="_blank" class="text-decoration-none text-white">  
@@ -88,7 +88,7 @@ class Footer extends HTMLElement {
             
 
             <!-- Columna 2: Contacto -->
-           <div class="col-3 d-flex flex-column">
+           <div class="col-4 d-flex flex-column">
              <strong class="mb-2 text-start w-100 fw-bold fs-3">Contáctanos</strong>
              <!-- Correo -->
            <div class="d-flex flex-row align-items-center mb-1">
@@ -110,7 +110,7 @@ class Footer extends HTMLElement {
          </div>
 
             <!-- Columna 3: Horario -->
-            <div class="col-3 d-flex flex-column">
+            <div class="col-4 d-flex flex-column">
               <strong class="mb-2 text-start w-100 fs-3">Horario de Atención</strong>
               <span class="small mb-2 text-start fw-bold">Cervecería (solo venta online)</span>
               <div class="d-flex flex-row align-items-center mb-1">
@@ -119,13 +119,7 @@ class Footer extends HTMLElement {
               </div>
             </div>
 
-            <!-- Columna 4: Logos -->
-            <div class="col-3 d-flex flex-column align-items-center">
-              <img src="assets/footer/ssl-kit-digital.png" class="img-item kit mb-2" alt="Sitio Seguro" title="Sitio Seguro">
-              <img src="assets/footer/sercotec.png" class="img-item sercotec" alt="Sercotec" title="Sercotec">
-            </div>
-          </div>
-
+       
         </div>
       </footer>
     `;

@@ -25,6 +25,7 @@ class Weichafe extends HTMLElement {
           margin: 0;
           font-size: 1.8rem;
           font-weight: bold;
+          color:white;
         }
 
         p {
@@ -32,6 +33,7 @@ class Weichafe extends HTMLElement {
           text-align: justify;
           font-size: 1rem;
           line-height: 1.5;
+          color:white;  
         }
 
         .imagen {

@@ -9,7 +9,7 @@ class Machi extends HTMLElement {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          background-color: #ffeb3b; /* fondo amarillo */
+          background-color: #EECB00; /* fondo amarillo */
           padding: 2rem;
           gap: 2rem;
         
@@ -25,13 +25,16 @@ class Machi extends HTMLElement {
           margin: 0;
           font-size: 1.8rem;
           font-weight: bold;
-        }
+          color: white; 
+          }
+
 
         p {
           margin-top: 1.5rem;
           text-align: justify;
           font-size: 1rem;
           line-height: 1.5;
+          color: white; 
         }
 
         .imagen {
@@ -58,22 +61,36 @@ class Machi extends HTMLElement {
           }
 
           .texto {
-            text-align: center;
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           height: 100%;
           }
-        }
+
+          .titulo-cerveza {
+            margin-bottom: 1rem; /* separa del párrafo */
+          }
+
+          .descripcion {
+          text-align: justify;
+           }
+          }
       </style>
 
       <div class="cerveza-container">
         <div class="texto">
-         <p>Cerveza<p>  
-          <h3>Machi Pale Ale 5,2º</h3>
-          <p>
+         <div class="titulo-cerveza">
+            <p>Cerveza</p>  
+            <h3>Machi Pale Ale 5,2º</h3>
+         </div>
+
+          <p class="descripcion">
             Machi es una cerveza de estilo Pale Ale de color dorada. Aroma a frutas maduras y un sutil toque de lúpulo. 
             Sabor maltoso de bajo amargor que finaliza con el dulzor propio de la malta. Sin aditivos, ni preservantes. Sin Filtrar.
           </p>
         </div>
         <div class="imagen">
-          <img src="./assets/cervezas/1-nana.png" alt="Cerveza Machi">
+          <img src="/assets/cervezas/1-nana.png" alt="Cerveza Machi">
         </div>
       </div>
     `;
