@@ -22,6 +22,16 @@ class Toqui extends HTMLElement {
           background-blend-mode: multiply;
         }
 
+          navbar-menu {
+          position: absolute;
+          top: 0;
+          right: 55%;
+          transform: translateX(-50%);
+          z-index: 10;
+          margin-top:160px;
+        }
+
+
         .texto {
           flex: 1;
           text-align: left;
@@ -88,6 +98,8 @@ class Toqui extends HTMLElement {
       </style>
 
       <div class="cerveza-container">
+        <navbar-menu class="menu"></navbar-menu>
+
         <div class="texto">
           <div class="titulo-cerveza">
            <p>Cerveza</p>  
