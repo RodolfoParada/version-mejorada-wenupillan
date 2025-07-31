@@ -9,27 +9,27 @@ class Navegacion extends HTMLElement {
   const rutaActual = window.location.pathname;
 
     // Mapea ruta a imagen fondo con rutas absolutas para evitar error de carga
-    let imagenFondo = "/assets/nav/default.png";
+    let imagenFondo = "./assets/nav/default.png";
     if (rutaActual.includes("index.html") || rutaActual === "/" || rutaActual === "/index") {
-      imagenFondo = "/assets/nav/azul.jpg";
+      imagenFondo = "./assets/nav/azul.jpg";
     } else if (rutaActual.includes("nosotros.html")) {
-      imagenFondo = "/assets/nav/gris.jpg";
+      imagenFondo = "./assets/nav/gris.jpg";
     } else if (rutaActual.includes("cervezas.html")) {
-      imagenFondo = "/assets/nav/mandarina.jpg";
+      imagenFondo = "./assets/nav/mandarina.jpg";
     } else if (rutaActual.includes("restaurant.html")) {
-      imagenFondo = "/assets/nav/negro.jpg";
+      imagenFondo = "./assets/nav/negro.jpg";
     } else if (rutaActual.includes("tienda.html")) {
-      imagenFondo = "/assets/nav/verde.jpg";
+      imagenFondo = "./assets/nav/verde.jpg";
     } else if (rutaActual.includes("contacto.html")) {
-      imagenFondo = "/assets/nav/violeta.jpg";
+      imagenFondo = "./assets/nav/violeta.jpg";
     } else if (rutaActual.includes("machi.html")) {
-      imagenFondo = "/assets/nav/violeta.jpg";
+      imagenFondo = "./assets/nav/violeta.jpg";
     } else if (rutaActual.includes("toqui.html")) {
-      imagenFondo = "/assets/nav/violeta.jpg";
+      imagenFondo = "./assets/nav/violeta.jpg";
     } else if (rutaActual.includes("weichafe.html")) {
-      imagenFondo = "/assets/nav/violeta.jpg";
+      imagenFondo = "./assets/nav/violeta.jpg";
     } else if (rutaActual.includes("lonko.html")) {
-      imagenFondo = "/assets/nav/violeta.jpg";
+      imagenFondo = "./assets/nav/violeta.jpg";
     }
 
     this.shadowRoot.innerHTML = `
@@ -118,7 +118,7 @@ width: 100%;
   <!-- Logo centrado y flotando sobre el fondo -->
   <div style="position: absolute; top: 20px; left: 50%; transform: translateX(-50%); z-index: 10;">
     <a href="#">
-      <img src="../assets/nav/Logo.png" alt="Logo" style="height: 80px;" />
+      <img src="./assets/nav/Logo.png" alt="Logo" style="height: 80px;" />
     </a>
   </div>
 
@@ -131,10 +131,10 @@ width: 100%;
     <!-- Menú de navegación alineado al fondo del navbar -->
     <div class="collapse navbar-collapse justify-content-center" id="menu">
       <ul class="navbar-nav gap-4 mb-3">
-        <li class="nav-item"><a class="nav-link text-white fw-bold" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link text-white fw-bold" href="nosotros.html">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link text-white fw-bold" href="./index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-white fw-bold" href="./nosotros.html">Nosotros</a></li>
         <li class="nav-item dropdown">
-           <a class="nav-link dropdown-toggle text-white fw-bold" href="#" id="cervezasDropdown">
+           <a class="nav-link dropdown-toggle text-white fw-bold" href="./cervezas.html" id="cervezasDropdown">
              Cervezas
            </a>
            <ul class="dropdown-menu" id="submenu-cervezas" style="display: none;">
@@ -144,9 +144,9 @@ width: 100%;
               <li><a class="dropdown-item" href="lonko.html">Lonko Porter 8.0</a></li>
            </ul>
         </li>
-        <li class="nav-item"><a class="nav-link text-white fw-bold" href="restaurant.html">Restaurant</a></li>
-        <li class="nav-item"><a class="nav-link text-white fw-bold" href="tienda.html">Tienda</a></li>
-        <li class="nav-item"><a class="nav-link text-white fw-bold" href="contacto.html">Contacto</a></li>
+        <li class="nav-item"><a class="nav-link text-white fw-bold" href="./restaurant.html">Restaurant</a></li>
+        <li class="nav-item"><a class="nav-link text-white fw-bold" href="./tienda.html">Tienda</a></li>
+        <li class="nav-item"><a class="nav-link text-white fw-bold" href="./contacto.html">Contacto</a></li>
       </ul>
     </div>
   </div>
