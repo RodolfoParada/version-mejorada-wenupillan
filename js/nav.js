@@ -5,22 +5,29 @@ class Navegacion extends HTMLElement {
   }
 
   connectedCallback() {
-    const rutaActual = window.location.pathname;
-    const basePath = `/${window.location.pathname.split("/")[1]}`;
-    const assetPath = `${basePath}/assets/nav/`;
+    // Detectar si estamos en GitHub Pages
+    const isGitHub = location.hostname.includes("github.io");
+    
+    // Si estamos en GitHub Pages, obtenemos el nombre del repositorio
+    const repoName = isGitHub ? location.pathname.split("/")[1] : "";
 
-    // Imagen de fondo dinámica según ruta
-    let imagenFondo = `${assetPath}default.png`;
-    if (rutaActual.includes("index.html") || rutaActual === "/" || rutaActual === `${basePath}/index`) {
-      imagenFondo = `${assetPath}azul.jpg`;
+    // Generamos la ruta base según entorno
+    const basePath = isGitHub ? `/${repoName}` : "";
+
+    const rutaActual = window.location.pathname;
+
+    let imagenFondo = `${basePath}/assets/nav/default.png`;
+
+    if (rutaActual.includes("index.html") || rutaActual === "/" || rutaActual.includes("index")) {
+      imagenFondo = `${basePath}/assets/nav/azul.jpg`;
     } else if (rutaActual.includes("nosotros.html")) {
-      imagenFondo = `${assetPath}gris.jpg`;
+      imagenFondo = `${basePath}/assets/nav/gris.jpg`;
     } else if (rutaActual.includes("cervezas.html")) {
-      imagenFondo = `${assetPath}mandarina.jpg`;
+      imagenFondo = `${basePath}/assets/nav/mandarina.jpg`;
     } else if (rutaActual.includes("restaurant.html")) {
-      imagenFondo = `${assetPath}negro.jpg`;
+      imagenFondo = `${basePath}/assets/nav/negro.jpg`;
     } else if (rutaActual.includes("tienda.html")) {
-      imagenFondo = `${assetPath}verde.jpg`;
+      imagenFondo = `${basePath}/assets/nav/verde.jpg`;
     } else if (
       rutaActual.includes("contacto.html") ||
       rutaActual.includes("machi.html") ||
@@ -28,76 +35,78 @@ class Navegacion extends HTMLElement {
       rutaActual.includes("weichafe.html") ||
       rutaActual.includes("lonko.html")
     ) {
-      imagenFondo = `${assetPath}violeta.jpg`;
+      imagenFondo = `${basePath}/assets/nav/violeta.jpg`;
     }
-
-    const logoSrc = `${assetPath}Logo.png`;
 
     this.shadowRoot.innerHTML = `
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-      <style> 
-      nav.navbar {
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-        background-image: url('${imagenFondo}');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        height: auto;
-        overflow: visible;
-        background-color: transparent !important;
-      }  
-      .nav-link {
-        position: relative;
-        color: white !important;
-        text-decoration: none;
-        font-weight: normal;
-        padding: 6px 12px;
-        border: 1px solid transparent;
-        border-radius: 5px;
-        transition: all 0.3s ease;
-      }
-      .nav-link:hover {
-        border: 1px solid white;
-        color: #f8f9fa;
-      }
-      .nav-link.active {
-        font-weight: bold;
-        border: 1px solid white;
-      }
-      .dropdown-menu {
-        position: absolute;
-        background-color: white;
-        color: black;
-        border-radius: 4px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        margin-top: 0.5rem;
-        z-index: 1000;
-        min-width: 200px;
-      }
-      .dropdown-item {
-        padding: 10px 15px;
-        display: block;
-        color: black;
-        text-decoration: none;
-      }
-      .dropdown-item:hover {
-        background-color: #f8f9fa;
-      }
-      .dropdown-toggle::after {
-        display: none !important;
-      }
-      @media (max-width: 768px) {
-        nav.navbar {
-          height: 250px;
-        }
-      }
-      </style> 
 
-      <nav class="navbar navbar-expand-lg navbar-light fixed-top color px-3 position-relative">
+      <style>
+        nav.navbar {
+          background-color: transparent !important;
+          padding-top: 2rem;
+          padding-bottom: 2rem;
+          background-image: url('${imagenFondo}');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          height: auto;
+          overflow: visible;
+        }
+
+        .nav-link {
+          position: relative;
+          color: white !important;
+          text-decoration: none;
+          font-weight: normal;
+          padding: 6px 12px;
+          border: 1px solid transparent;
+          border-radius: 5px;
+          transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+          border: 1px solid white;
+          color: #f8f9fa;
+        }
+
+        .nav-link.active {
+          font-weight: bold;
+          border: 1px solid white;
+        }
+
+        .dropdown-menu {
+          position: absolute;
+          background-color: white;
+          color: black;
+          border-radius: 4px;
+          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+          margin-top: 0.5rem;
+          z-index: 1000;
+          min-width: 200px;
+        }
+
+        .dropdown-item {
+          padding: 10px 15px;
+          display: block;
+          color: black;
+          text-decoration: none;
+        }
+
+        .dropdown-item:hover {
+          background-color: #f8f9fa;
+        }
+
+        .dropdown-toggle::after {
+          display: none !important;
+        }
+      </style>
+
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top color px-3 position-relative" style="height: 400px;">
+        <!-- Logo -->
         <div style="position: absolute; top: 20px; left: 50%; transform: translateX(-50%); z-index: 10;">
-          <a href="#">
-            <img src="${logoSrc}" alt="Logo" style="height: 80px;" />
+          <a href="${basePath}/index.html">
+            <img src="${basePath}/assets/nav/Logo.png" alt="Logo" style="height: 80px;" />
           </a>
         </div>
 
@@ -111,7 +120,9 @@ class Navegacion extends HTMLElement {
               <li class="nav-item"><a class="nav-link text-white fw-bold" href="${basePath}/index.html">Home</a></li>
               <li class="nav-item"><a class="nav-link text-white fw-bold" href="${basePath}/nosotros.html">Nosotros</a></li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white fw-bold" href="${basePath}/cervezas.html" id="cervezasDropdown">Cervezas</a>
+                <a class="nav-link dropdown-toggle text-white fw-bold" href="${basePath}/cervezas.html" id="cervezasDropdown">
+                  Cervezas
+                </a>
                 <ul class="dropdown-menu" id="submenu-cervezas" style="display: none;">
                   <li><a class="dropdown-item" href="${basePath}/machi.html">Machi Pale Ale 5.2</a></li>
                   <li><a class="dropdown-item" href="${basePath}/toqui.html">Toqui Irish Red Ale 6.5</a></li>
@@ -128,23 +139,18 @@ class Navegacion extends HTMLElement {
       </nav>
     `;
 
-    // Comportamiento del toggle personalizado
     const toggleBtn = this.shadowRoot.getElementById("btn-toggle");
     const menu = this.shadowRoot.getElementById("menu");
-    toggleBtn.addEventListener("click", () => {
-      menu.classList.toggle("show");
-    });
+    toggleBtn.addEventListener("click", () => menu.classList.toggle("show"));
 
-    // Resaltar link activo
     const links = this.shadowRoot.querySelectorAll(".nav-link");
     links.forEach(link => {
       const linkHref = link.getAttribute("href");
-      if (rutaActual.endsWith(linkHref)) {
+      if (rutaActual.includes(linkHref)) {
         link.classList.add("active");
       }
     });
 
-    // Dropdown personalizado
     const dropdownToggle = this.shadowRoot.getElementById("cervezasDropdown");
     const submenu = this.shadowRoot.getElementById("submenu-cervezas");
 
