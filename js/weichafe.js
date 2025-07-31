@@ -6,13 +6,20 @@ class Weichafe extends HTMLElement {
     this.shadowRoot.innerHTML = `
       <style>
         .cerveza-container {
+          position: relative;
           display: flex;
           justify-content: space-between;
           align-items: center;
-          background-color: #782259; /* fondo amarillo */
           padding: 2rem;
           gap: 2rem;
-          margin-bottom: 8rem;
+          margin-bottom: 10rem;
+
+          background-image: url('./assets/cervezas/volcan-humo.jpg');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-color: rgba(120, 34, 89, 0.85); /* vino con opacidad */
+          background-blend-mode: multiply;
         }
 
         .texto {
@@ -25,7 +32,7 @@ class Weichafe extends HTMLElement {
           margin: 0;
           font-size: 1.8rem;
           font-weight: bold;
-          color:white;
+          color: white;
         }
 
         p {
@@ -33,16 +40,32 @@ class Weichafe extends HTMLElement {
           text-align: justify;
           font-size: 1rem;
           line-height: 1.5;
-          color:white;  
+          color: white;  
         }
+
+        .titulo-cerveza {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        .descripcion {
+         text-align: justify;
+         font-size: 1rem;
+         color: white;
+         }
 
         .imagen {
           flex: 1;
           display: flex;
           justify-content: flex-end;
+          margin-bottom: -2rem;
+
         }
 
-        img {
+        .imagen img {
           max-width: 100%;
           height: auto;
           border-radius: 12px;
@@ -67,14 +90,17 @@ class Weichafe extends HTMLElement {
 
       <div class="cerveza-container">
         <div class="texto">
-         <p>Cerveza<p>  
-          <h3>Weichafe Ipa 7,2º</h3>
-          <p>
-            Weichafe es una cerveza IPA (Indian Pale Ale) de color oro. Aroma a maltas y lúpulo. Sabor fuertemente lupulado y equilibrado con malta. Sin aditivos, ni preservantes. Sin Filtrar.
+          <div class="titulo-cerveza">
+            <p>Cerveza</p>  
+              <h3>Weichafe Ipa 7,2º</h3>
+            </div>
+            <p>
+            Weichafe es una cerveza IPA (Indian Pale Ale) de color oro. Aroma a maltas y lúpulo. 
+            Sabor fuertemente lupulado y equilibrado con malta. Sin aditivos, ni preservantes. Sin Filtrar.
           </p>
         </div>
         <div class="imagen">
-          <img src="./assets/cervezas/3.weichafe.png" alt="Cerveza Machi">
+          <img src="./assets/cervezas/3.weichafe.png" alt="Cerveza Weichafe">
         </div>
       </div>
     `;
