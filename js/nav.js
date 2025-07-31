@@ -5,35 +5,32 @@ class Navegacion extends HTMLElement {
   }
 
   connectedCallback() {
-    // Detectar si estamos en GitHub Pages
     const isGitHub = location.hostname.includes("github.io");
-    
-    // Si estamos en GitHub Pages, obtenemos el nombre del repositorio
     const repoName = isGitHub ? location.pathname.split("/")[1] : "";
-
-    // Generamos la ruta base según entorno
     const basePath = isGitHub ? `/${repoName}` : "";
 
     const rutaActual = window.location.pathname;
+    const rutaSinBase = rutaActual.replace(basePath, "");
 
+    // Imagen por defecto
     let imagenFondo = `${basePath}/assets/nav/default.png`;
 
-    if (rutaActual.includes("index.html") || rutaActual === "/" || rutaActual.includes("index")) {
+    if (rutaSinBase === "/" || rutaSinBase.includes("index")) {
       imagenFondo = `${basePath}/assets/nav/azul.jpg`;
-    } else if (rutaActual.includes("nosotros.html")) {
+    } else if (rutaSinBase.includes("nosotros.html")) {
       imagenFondo = `${basePath}/assets/nav/gris.jpg`;
-    } else if (rutaActual.includes("cervezas.html")) {
+    } else if (rutaSinBase.includes("cervezas.html")) {
       imagenFondo = `${basePath}/assets/nav/mandarina.jpg`;
-    } else if (rutaActual.includes("restaurant.html")) {
+    } else if (rutaSinBase.includes("restaurant.html")) {
       imagenFondo = `${basePath}/assets/nav/negro.jpg`;
-    } else if (rutaActual.includes("tienda.html")) {
+    } else if (rutaSinBase.includes("tienda.html")) {
       imagenFondo = `${basePath}/assets/nav/verde.jpg`;
     } else if (
-      rutaActual.includes("contacto.html") ||
-      rutaActual.includes("machi.html") ||
-      rutaActual.includes("toqui.html") ||
-      rutaActual.includes("weichafe.html") ||
-      rutaActual.includes("lonko.html")
+      rutaSinBase.includes("contacto.html") ||
+      rutaSinBase.includes("machi.html") ||
+      rutaSinBase.includes("toqui.html") ||
+      rutaSinBase.includes("weichafe.html") ||
+      rutaSinBase.includes("lonko.html")
     ) {
       imagenFondo = `${basePath}/assets/nav/violeta.jpg`;
     }
@@ -43,19 +40,16 @@ class Navegacion extends HTMLElement {
 
       <style>
         nav.navbar {
-          background-color: transparent !important;
-          padding-top: 2rem;
-          padding-bottom: 2rem;
           background-image: url('${imagenFondo}');
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;
+          padding-top: 2rem;
+          padding-bottom: 2rem;
           height: auto;
-          overflow: visible;
         }
 
         .nav-link {
-          position: relative;
           color: white !important;
           text-decoration: none;
           font-weight: normal;
@@ -103,7 +97,6 @@ class Navegacion extends HTMLElement {
       </style>
 
       <nav class="navbar navbar-expand-lg navbar-light fixed-top color px-3 position-relative" style="height: 400px;">
-        <!-- Logo -->
         <div style="position: absolute; top: 20px; left: 50%; transform: translateX(-50%); z-index: 10;">
           <a href="${basePath}/index.html">
             <img src="${basePath}/assets/nav/Logo.png" alt="Logo" style="height: 80px;" />
@@ -117,12 +110,10 @@ class Navegacion extends HTMLElement {
 
           <div class="collapse navbar-collapse justify-content-center" id="menu">
             <ul class="navbar-nav gap-4 mb-3">
-              <li class="nav-item"><a class="nav-link text-white fw-bold" href="${basePath}/index.html">Home</a></li>
-              <li class="nav-item"><a class="nav-link text-white fw-bold" href="${basePath}/nosotros.html">Nosotros</a></li>
+              <li class="nav-item"><a class="nav-link" href="${basePath}/index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="${basePath}/nosotros.html">Nosotros</a></li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white fw-bold" href="${basePath}/cervezas.html" id="cervezasDropdown">
-                  Cervezas
-                </a>
+                <a class="nav-link dropdown-toggle" href="${basePath}/cervezas.html" id="cervezasDropdown">Cervezas</a>
                 <ul class="dropdown-menu" id="submenu-cervezas" style="display: none;">
                   <li><a class="dropdown-item" href="${basePath}/machi.html">Machi Pale Ale 5.2</a></li>
                   <li><a class="dropdown-item" href="${basePath}/toqui.html">Toqui Irish Red Ale 6.5</a></li>
@@ -130,27 +121,30 @@ class Navegacion extends HTMLElement {
                   <li><a class="dropdown-item" href="${basePath}/lonko.html">Lonko Porter 8.0</a></li>
                 </ul>
               </li>
-              <li class="nav-item"><a class="nav-link text-white fw-bold" href="${basePath}/restaurant.html">Restaurant</a></li>
-              <li class="nav-item"><a class="nav-link text-white fw-bold" href="${basePath}/tienda.html">Tienda</a></li>
-              <li class="nav-item"><a class="nav-link text-white fw-bold" href="${basePath}/contacto.html">Contacto</a></li>
+              <li class="nav-item"><a class="nav-link" href="${basePath}/restaurant.html">Restaurant</a></li>
+              <li class="nav-item"><a class="nav-link" href="${basePath}/tienda.html">Tienda</a></li>
+              <li class="nav-item"><a class="nav-link" href="${basePath}/contacto.html">Contacto</a></li>
             </ul>
           </div>
         </div>
       </nav>
     `;
 
+    // Interacción: toggler del menú responsive
     const toggleBtn = this.shadowRoot.getElementById("btn-toggle");
     const menu = this.shadowRoot.getElementById("menu");
     toggleBtn.addEventListener("click", () => menu.classList.toggle("show"));
 
+    // Activar clase .active
     const links = this.shadowRoot.querySelectorAll(".nav-link");
     links.forEach(link => {
       const linkHref = link.getAttribute("href");
-      if (rutaActual.includes(linkHref)) {
+      if (rutaActual.endsWith(linkHref)) {
         link.classList.add("active");
       }
     });
 
+    // Dropdown manual
     const dropdownToggle = this.shadowRoot.getElementById("cervezasDropdown");
     const submenu = this.shadowRoot.getElementById("submenu-cervezas");
 
