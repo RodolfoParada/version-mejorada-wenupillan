@@ -90,7 +90,7 @@ class Machi extends HTMLElement {
           </p>
         </div>
         <div class="imagen">
-          <img src="/assets/cervezas/1-nana.png" alt="Cerveza Machi">
+          <img src="./assets/cervezas/1-nana.png" alt="Cerveza Machi">
         </div>
       </div>
     `;
