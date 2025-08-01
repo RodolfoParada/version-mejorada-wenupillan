@@ -15,7 +15,7 @@
             border-radius: 12px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             color: #333;
-         
+             margin-bottom: -2rem;
           }
 
           h2, h3 {
