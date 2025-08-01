@@ -12,7 +12,6 @@ class Navegacion extends HTMLElement {
     const rutaActual = window.location.pathname;
     const rutaSinBase = rutaActual.replace(basePath, "");
 
-    // Imagen por defecto
     let imagenFondo = `${basePath}/assets/nav/default.png`;
 
     if (rutaSinBase === "/" || rutaSinBase.includes("index")) {
@@ -37,7 +36,6 @@ class Navegacion extends HTMLElement {
 
     this.shadowRoot.innerHTML = `
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-
       <style>
         nav.navbar {
           background-image: url('${imagenFondo}');
@@ -45,7 +43,7 @@ class Navegacion extends HTMLElement {
           background-position: center;
           background-repeat: no-repeat;
           padding-top: 2rem;
-          padding-bottom: 2rem;
+          padding-bottom: 8rem;
           height: auto;
         }
 
@@ -94,6 +92,156 @@ class Navegacion extends HTMLElement {
         .dropdown-toggle::after {
           display: none !important;
         }
+
+        .navbar-toggler {
+          display: none;
+          background-color: white;
+          border: none;
+          padding: 0.5rem 1rem;
+          border-radius: 5px;
+        }
+
+        .navbar-toggler-icon {
+          display: inline-block;
+          width: 24px;
+          height: 2px;
+          background-color: black;
+          position: relative;
+        }
+
+        .navbar-toggler-icon::before,
+        .navbar-toggler-icon::after {
+          content: "";
+          position: absolute;
+          width: 24px;
+          height: 2px;
+          background-color: black;
+          left: 0;
+        }
+
+        .navbar-toggler-icon::before {
+          top: -8px;
+        }
+
+        .navbar-toggler-icon::after {
+          top: 8px;
+        }
+
+        .menu {
+          display: flex;
+          justify-content: center;
+        }
+/* Estilos responsive móviles */
+@media (max-width: 768px) {
+
+  nav.navbar {
+    padding-bottom: 16rem;
+    position: relative;
+  }
+
+  .navbar-toggler {
+    display: block;
+    position: relative;
+    z-index: 20;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    background-color:  transparent;
+    padding: 1rem;
+    border-radius: 10px;
+    position: absolute;
+    top: 120px; /* debajo del navbar-toggler */
+    left: 10px; /* a la izquierda del botón */
+    z-index: 10;
+    width: 90vw;
+  }
+
+  .menu.show {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .nav-item {
+    flex: 1 1 30%; /* 3 por fila */
+    display: flex;
+    justify-content: center;
+  }
+
+ .dropdown-menu {
+  display: none;
+  position: relative; /* antes era absolute */
+  top: auto;           /* evita empujones */
+  left: auto;
+  width: 100%;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 50;
+  padding: 0.5rem 0;
+}
+
+  .nav-item.dropdown.open > .dropdown-menu {
+    display: block;
+  }
+}
+
+@media (min-width: 770px) and (max-width: 991px) {
+  .navbar-toggler {
+    display: none; /* Oculta botón menú hamburguesa */
+  }
+
+  .menu {
+    display: flex !important;  /* Mostrar siempre */
+    flex-direction: row !important; /* Horizontal */
+    justify-content: center;
+    position: static; /* Para que no flote */
+    width: auto;
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+    gap: 1rem;
+    width: auto;
+  }
+
+  .nav-item {
+    flex: initial;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    display: none;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+    padding: 0.5rem 0;
+  }
+
+  .nav-item.dropdown.open > .dropdown-menu {
+    display: block;
+  }
+        }
       </style>
 
       <nav class="navbar navbar-expand-lg navbar-light fixed-top color px-3 position-relative" style="height: 400px;">
@@ -108,7 +256,7 @@ class Navegacion extends HTMLElement {
             <span class="navbar-toggler-icon"></span>
           </button>
 
-          <div class="collapse navbar-collapse justify-content-center" id="menu">
+          <div class="menu" id="menu">
             <ul class="navbar-nav gap-4 mb-3">
               <li class="nav-item"><a class="nav-link" href="${basePath}/index.html">Home</a></li>
               <li class="nav-item"><a class="nav-link" href="${basePath}/nosotros.html">Nosotros</a></li>
@@ -130,12 +278,13 @@ class Navegacion extends HTMLElement {
       </nav>
     `;
 
-    // Interacción: toggler del menú responsive
     const toggleBtn = this.shadowRoot.getElementById("btn-toggle");
     const menu = this.shadowRoot.getElementById("menu");
-    toggleBtn.addEventListener("click", () => menu.classList.toggle("show"));
 
-    // Activar clase .active
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("show");
+    });
+
     const links = this.shadowRoot.querySelectorAll(".nav-link");
     links.forEach(link => {
       const linkHref = link.getAttribute("href");
@@ -144,9 +293,10 @@ class Navegacion extends HTMLElement {
       }
     });
 
-    // Dropdown manual
     const dropdownToggle = this.shadowRoot.getElementById("cervezasDropdown");
     const submenu = this.shadowRoot.getElementById("submenu-cervezas");
+    const dropdownItem = dropdownToggle.closest(".dropdown");
+
 
     dropdownToggle.addEventListener("click", (e) => {
       e.preventDefault();
