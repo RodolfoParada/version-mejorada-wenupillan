@@ -34,6 +34,13 @@ class Navegacion extends HTMLElement {
       imagenFondo = `${basePath}/assets/nav/violeta.jpg`;
     }
 
+
+
+
+
+
+
+    
     this.shadowRoot.innerHTML = `
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
       <style>
@@ -275,6 +282,9 @@ class Navegacion extends HTMLElement {
             </ul>
           </div>
         </div>
+       <div style="position: absolute; top: 20px; right: 20px; z-index: 20;">
+  <carrito-compras basepath="${basePath}"></carrito-compras>
+</div>
       </nav>
     `;
 
@@ -309,6 +319,8 @@ class Navegacion extends HTMLElement {
         submenu.style.display = "none";
       }
     });
+
+
   }
 }
 

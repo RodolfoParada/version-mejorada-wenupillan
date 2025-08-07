@@ -10,18 +10,23 @@ class NavbarMenu extends HTMLElement {
 
     this.shadowRoot.innerHTML = `
       <style>
+        * {
+          box-sizing: border-box;
+        }
+
         .navbar-nav {
           list-style: none;
           padding: 0;
-          margin: 0;
+          margin: 0 auto;
           display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
+          flex-direction: column;
+          align-items: center;
           gap: 1rem;
         }
 
         .nav-item {
-          margin-bottom: 0.75rem;
+          width: 100%;
+          text-align: center;
         }
 
         .nav-link {
@@ -30,7 +35,7 @@ class NavbarMenu extends HTMLElement {
         }
 
         .nav-link img {
-          width: 60px;
+          width: 50px;
           height: auto;
           border-radius: 0.5rem;
           transition: transform 0.3s;
@@ -40,15 +45,44 @@ class NavbarMenu extends HTMLElement {
           transform: scale(1.1);
         }
 
+        /* Tablet en adelante */
         @media (min-width: 768px) {
-          .mb-3 {
-            margin-bottom: 1rem !important;
+          .navbar-nav {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 24rem;
+          }
+
+          .nav-item {
+            width: auto;
+          }
+
+          .nav-link img {
+            width: 30px;
+            margin-top: 20px;
+          }
+        }
+
+        /* Laptop en adelante */
+        @media (min-width: 1024px) {
+          .nav-link img {
+            width: 40px;
+            margin-top: -120px; 
+          }
+        }
+
+        /* Escritorio grande */
+        @media (min-width: 1440px) {
+          .nav-link img {
+            width: 50px;
           }
         }
       </style>
 
-      <div class="collapse navbar-collapse justify-content-center" id="menu">
-        <ul class="navbar-nav gap-4 mb-3">
+      <nav>
+        <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link" href="${basePath}/machi.html">
               <img src="${basePath}/assets/index/nana.png" alt="Machi" />
@@ -70,7 +104,7 @@ class NavbarMenu extends HTMLElement {
             </a>
           </li>
         </ul>
-      </div>
+      </nav>
     `;
   }
 }
