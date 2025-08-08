@@ -1,0 +1,107 @@
+ class Suscribete extends HTMLElement {
+    constructor() {
+      super();
+      this.attachShadow({ mode: 'open' });
+    }
+
+    connectedCallback() {
+      this.shadowRoot.innerHTML = `
+        <style>
+          :host {
+            display: block;
+            font-family: Arial, sans-serif;
+            position: relative;
+          }
+
+          .container {
+            border: 1px solid #ccc;
+            padding: 1em;
+            border-radius: 8px;
+            max-width: 400px;
+            background-color: #f9f9f9;
+            position: relative;
+            display: inline-block;
+            margin-left: 30px;
+            margin-top: 5px;
+             text-align: center; /* centrado del contenido, incluido el botón */
+          }
+
+          .form-overlay {
+            position: absolute;
+            top: 0;
+            left: 100%; /* aparece a la derecha del contenedor */
+            background: white;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 1em;
+            width: 250px;
+            display: none;
+            z-index: 999;
+          }
+
+          .form-overlay.show {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5em;
+          }
+
+          input {
+            padding: 0.5em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+          }
+
+          button {
+            padding: 0.5em 1em;
+            font-size: 1em;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        
+          }
+
+          button:hover {
+            background-color: #0056b3;
+          }
+        </style>
+
+        <div class="container">
+          <p>Suscríbete a nuestro boletín</p>
+          <button id="toggleForm">Aquí</button>
+          <div class="form-overlay" id="subscriptionForm">
+            <input type="text" placeholder="Nombre" id="name" />
+            <input type="email" placeholder="Correo electrónico" id="email" />
+            <button id="subscribeButton">Solicitar suscripción</button>
+          </div>
+        </div>
+      `;
+
+      const toggleBtn = this.shadowRoot.getElementById('toggleForm');
+      const form = this.shadowRoot.getElementById('subscriptionForm');
+      const subscribeBtn = this.shadowRoot.getElementById('subscribeButton');
+
+      toggleBtn.addEventListener('click', () => {
+        form.classList.toggle('show');
+      });
+
+      subscribeBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const name = this.shadowRoot.getElementById('name').value.trim();
+        const email = this.shadowRoot.getElementById('email').value.trim();
+
+        if (!name || !email) {
+          alert('Por favor, completa todos los campos.');
+          return;
+        }
+
+        alert(`¡Gracias por suscribirte, ${name}!`);
+        form.classList.remove('show');
+      });
+    }
+  }
+
+  customElements.define('suscribete-item', Suscribete);
