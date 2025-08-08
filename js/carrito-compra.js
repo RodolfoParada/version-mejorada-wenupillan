@@ -37,19 +37,41 @@ class CarritoCompras extends HTMLElement {
           🛒 <span id="contador-carrito" class="badge bg-danger">0</span>
         </button>
         <div id="dropdown-carrito">
-          <h6>🛒 Carrito</h6>
-          <ul id="lista-carrito" style="list-style: none; padding: 0;"></ul>
-          <p><strong>Total:</strong> $<span id="total-carrito" class="text-success fw-bold fs-5">0</span></p>
-          <a href="${basePath}/tienda.html" class="btn btn-success w-100">Ir a pagar</a>
-        </div>
-      </div>
+  <div id="vista-carrito">
+    <h6>🛒 Carrito</h6>
+    <ul id="lista-carrito" style="list-style: none; padding: 0;"></ul>
+    <p><strong>Total:</strong> $<span id="total-carrito" class="text-success fw-bold fs-5">0</span></p>
+    <button id="mostrar-formulario" class="btn btn-success w-100">Ir a pagar</button>
+  </div>
+
+  <div id="vista-pago" style="display: none;">
+    <button id="volver-carrito" class="btn btn-link mb-2">⬅ Volver al carrito</button>
+    <formulario-pago id="formulario-pago" total="0"></formulario-pago>
+  </div>
+</div>
+</div>
     `;
+    this.vistaCarrito = this.shadowRoot.getElementById("vista-carrito");
+this.vistaPago = this.shadowRoot.getElementById("vista-pago");
+this.mostrarFormularioBtn = this.shadowRoot.getElementById("mostrar-formulario");
+this.volverCarritoBtn = this.shadowRoot.getElementById("volver-carrito");
+this.formularioPago = this.shadowRoot.getElementById("formulario-pago");
+
 
     this.toggleCarrito = this.shadowRoot.getElementById("toggle-carrito");
     this.dropdownCarrito = this.shadowRoot.getElementById("dropdown-carrito");
     this.contadorCarrito = this.shadowRoot.getElementById("contador-carrito");
     this.listaCarrito = this.shadowRoot.getElementById("lista-carrito");
     this.totalCarrito = this.shadowRoot.getElementById("total-carrito");
+
+    this.formularioPago = this.shadowRoot.getElementById("formulario-pago");
+    this.mostrarFormularioBtn = this.shadowRoot.getElementById("mostrar-formulario");
+    this.formulario = this.shadowRoot.getElementById("formulario");
+    this.totalConDespacho = this.shadowRoot.getElementById("total-con-despacho");
+
+   this.mostrarFormularioBtn.addEventListener("click", () => this.mostrarFormularioPago());
+this.volverCarritoBtn.addEventListener("click", () => this.volverAlCarrito());
+
 
     this.toggleCarrito.addEventListener("click", (e) => {
       e.stopPropagation();
@@ -165,6 +187,52 @@ class CarritoCompras extends HTMLElement {
     this._carritoActual = localStorage.getItem("carrito");
     this.actualizarCarrito();
   }
+
+
+// finalizar la compra
+
+  mostrarFormularioPago() {
+  const contenedor = this.shadowRoot.getElementById("contenedor-formulario");
+const totalSinDespacho = parseInt(this.totalCarrito.textContent.replace(/\./g, "")) || 0;
+
+
+  // Pasar el total como atributo
+  this.formularioPago.setAttribute("total", totalSinDespacho);
+
+  this.vistaCarrito.style.display = "none";
+  this.vistaPago.style.display = "block";
+}
+
+procesarPago(event) {
+  event.preventDefault();
+
+  const data = new FormData(this.formulario);
+  const camposObligatorios = ["nombres", "apellidos", "rut", "tarjeta", "direccion"];
+  let faltan = false;
+
+  for (const campo of camposObligatorios) {
+    if (!data.get(campo)?.trim()) {
+      faltan = true;
+      break;
+    }
+  }
+
+  if (faltan) {
+    alert("Por favor, complete todos los campos obligatorios.");
+    return;
+  }
+
+  alert("Esta es una página de estudio. Los valores son idénticos a la página original www.wenupillan.cl, pero quizás están desactualizados. Contactarse con ellos para realizar una compra real.");
+}
+
+
+volverAlCarrito() {
+  this.vistaPago.style.display = "none";
+  this.vistaCarrito.style.display = "block";
+}
+
+
+
 }
 
 customElements.define("carrito-compras", CarritoCompras);
