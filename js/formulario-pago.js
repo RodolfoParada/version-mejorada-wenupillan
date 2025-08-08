@@ -81,9 +81,12 @@ class FormularioPago extends HTMLElement {
 
     alert("Esta es una página de estudio. Los valores son idénticos a la página original www.wenupillan.cl, pero quizás están desactualizados. Contactarse con ellos para realizar una compra real.");
 
-    // Limpiar el carrito y notificar a otros componentes
+    // Limpiar el carrito
     localStorage.removeItem("carrito");
     window.dispatchEvent(new Event("storage"));
+
+    // Reiniciar el formulario con total 0
+    this.setAttribute("total", "0");
   }
 }
 
