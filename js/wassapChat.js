@@ -244,8 +244,18 @@ this.titleSpan.addEventListener('click', () => {
       "cuál es su horario de atención": "De lunas a viernes de 9:00 a 18:hrs",
       "Cual es su horario de atencion": "De lunas a viernes de 9:00 a 18:hrs",
       "Cual es su horario de atencion": "De lunas a viernes de 9:00 a 18:hrs",
+      "Cual es tu horario de atencion": "De lunas a viernes de 9:00 a 18:hrs",
+      "Cuál es tu horario de atención": "De lunas a viernes de 9:00 a 18:hrs",
+      "cuál es tu horario de atención": "De lunas a viernes de 9:00 a 18:hrs",
+      "cual es tu horario de atencion": "De lunas a viernes de 9:00 a 18:hrs",
+      "cual es tu horario": "De lunas a viernes de 9:00 a 18:hrs",
+      "cuál es tu horario": "De lunas a viernes de 9:00 a 18:hrs",
+      "Cual es tu horario": "De lunas a viernes de 9:00 a 18:hrs",
+      "Cuál es tu horario": "De lunas a viernes de 9:00 a 18:hrs",
       "En que horario atienden": "De lunas a viernes de 9:00 a 18:hrs",
       "en que horario atienden": "De lunas a viernes de 9:00 a 18:hrs",
+      "tienen cervezas": "Siempre tenemos cerveza, sobre todo para tí",
+      "Tienen cervezas": "Siempre tenemos cerveza, sobre todo para tí",
       
     };
     return respuestas[message] || "Lo siento, no entendí tu mensaje.";
