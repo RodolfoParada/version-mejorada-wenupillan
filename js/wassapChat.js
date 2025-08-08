@@ -8,10 +8,10 @@ class WhatsAppChat extends HTMLElement {
     this.shadowRoot.innerHTML = `
  <style>
         .chat-container {
-          position: fixed;       /* Fija el chat en pantalla */
-          bottom: 20px;          /* Separado del borde inferior */
-          right: 20px;           /* Separado del borde derecho */
-          z-index: 9999;         /* Asegura que quede sobre el contenido */
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          z-index: 9999;
   
           width: 100%;
           max-width: 320px;
@@ -24,7 +24,7 @@ class WhatsAppChat extends HTMLElement {
           box-shadow: 0 4px 12px rgba(0,0,0,0.1);
           overflow: hidden;
           transition: height 0.3s ease;
-          background: white;     /* Para evitar transparencia */
+          background: white;
         }
 
         .header {
@@ -106,7 +106,7 @@ class WhatsAppChat extends HTMLElement {
       </style>
 
         <div class="chat-container">
-        <div class="header">
+        <div class="header" id="header">
           <span class="title" id="title">WhatsApp Simulado</span>
           <span class="close-btn" id="closeBtn">✕</span>
         </div>
@@ -119,11 +119,9 @@ class WhatsAppChat extends HTMLElement {
         </div>
     `;
 
-
-     // Elementos clave
+    // Elementos clave
     this.container = this.shadowRoot.querySelector('.chat-container');
-    this.header = this.shadowRoot.querySelector('.header');
-    this.title = this.shadowRoot.querySelector('.title');
+    this.header = this.shadowRoot.getElementById('header');
     this.titleSpan = this.shadowRoot.getElementById('title');
     this.closeBtn = this.shadowRoot.getElementById('closeBtn');
     this.messagesDiv = this.shadowRoot.getElementById('messages');
@@ -131,8 +129,11 @@ class WhatsAppChat extends HTMLElement {
     this.sendButton = this.shadowRoot.getElementById('send');
     this.inputContainer = this.shadowRoot.querySelector('.input-container');
 
-    // Estado del chat (expandido o no)
-    this.minimized = false;
+    // Estado inicial: cerrado
+    this.minimized = true;
+    this.container.style.height = '40px';
+    this.messagesDiv.style.display = 'none';
+    this.inputContainer.style.display = 'none';
 
     // Eventos
     this.sendButton.addEventListener('click', () => this.handleSend());
@@ -140,46 +141,27 @@ class WhatsAppChat extends HTMLElement {
       if (e.key === 'Enter') this.handleSend();
     });
 
-    // Cerrar (minimizar)
+    // Botón cerrar
     this.closeBtn.addEventListener('click', (e) => {
-      e.stopPropagation(); // evitar que se dispare el click del header
+      e.stopPropagation();
       this.minimizeChat();
     });
 
-    // Hacer clic en el header para expandir
+    // Click en el header abre/cierra
     this.header.addEventListener('click', () => {
       if (this.minimized) {
         this.expandChat();
+      } else {
+        this.minimizeChat();
       }
     });
-
-   // Minimizar
-this.closeBtn.addEventListener('click', () => {
-  this.container.style.height = '40px';
-  this.messagesDiv.style.display = 'none';
-  this.inputContainer.style.display = 'none';
-  this.titleSpan.textContent = 'WhatsApp Simulado';
-  this.minimized = true;
-});
-
-// Expandir al hacer clic solo en el título (no todo el header)
-this.titleSpan.addEventListener('click', () => {
-  if (this.minimized) {
-    this.container.style.height = '400px';
-    this.messagesDiv.style.display = 'block';
-    this.inputContainer.style.display = 'flex';
-    this.titleSpan.textContent = 'WhatsApp Simulado';
-    this.minimized = false;
-  }
-});
-
   }
 
   minimizeChat() {
     this.container.style.height = '40px';
     this.messagesDiv.style.display = 'none';
     this.inputContainer.style.display = 'none';
-    this.title.textContent = 'WhatsApp Simulado (haz clic para abrir)';
+    this.titleSpan.textContent = 'WhatsApp Simulado';
     this.minimized = true;
   }
 
@@ -187,7 +169,7 @@ this.titleSpan.addEventListener('click', () => {
     this.container.style.height = '400px';
     this.messagesDiv.style.display = 'block';
     this.inputContainer.style.display = 'flex';
-    this.title.textContent = 'WhatsApp Simulado';
+    this.titleSpan.textContent = 'WhatsApp Simulado';
     this.minimized = false;
   }
 
@@ -203,13 +185,12 @@ this.titleSpan.addEventListener('click', () => {
     }, 500);
   }
 
-
   addMessage(sender, text) {
     const msg = document.createElement('div');
     msg.className = sender;
     msg.textContent = text;
     this.messagesDiv.appendChild(msg);
-     this.messagesDiv.scrollTo({ top: this.messagesDiv.scrollHeight, behavior: 'smooth' });
+    this.messagesDiv.scrollTo({ top: this.messagesDiv.scrollHeight, behavior: 'smooth' });
   }
 
   getBotResponse(message) {
@@ -245,13 +226,9 @@ this.titleSpan.addEventListener('click', () => {
       "Cual es su horario de atencion": "De lunas a viernes de 9:00 a 18:hrs",
       "Cual es su horario de atencion": "De lunas a viernes de 9:00 a 18:hrs",
       "Cual es tu horario de atencion": "De lunas a viernes de 9:00 a 18:hrs",
+      "cual es tu horario de atencion": "De lunas a viernes de 9:00 a 18:hrs",
       "Cuál es tu horario de atención": "De lunas a viernes de 9:00 a 18:hrs",
       "cuál es tu horario de atención": "De lunas a viernes de 9:00 a 18:hrs",
-      "cual es tu horario de atencion": "De lunas a viernes de 9:00 a 18:hrs",
-      "cual es tu horario": "De lunas a viernes de 9:00 a 18:hrs",
-      "cuál es tu horario": "De lunas a viernes de 9:00 a 18:hrs",
-      "Cual es tu horario": "De lunas a viernes de 9:00 a 18:hrs",
-      "Cuál es tu horario": "De lunas a viernes de 9:00 a 18:hrs",
       "En que horario atienden": "De lunas a viernes de 9:00 a 18:hrs",
       "en que horario atienden": "De lunas a viernes de 9:00 a 18:hrs",
       "tienen cervezas": "Siempre tenemos cerveza, sobre todo para tí",
@@ -259,8 +236,7 @@ this.titleSpan.addEventListener('click', () => {
       
     };
     return respuestas[message] || "Lo siento, no entendí tu mensaje.";
-
-}
+  }
 }
 
 customElements.define('whatsapp-chat', WhatsAppChat);
