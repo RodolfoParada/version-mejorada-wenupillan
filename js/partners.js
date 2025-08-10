@@ -59,7 +59,7 @@ class PartnerButton extends HTMLElement {
 
   connectedCallback() {
     this.shadowRoot.getElementById("contactBtn").addEventListener("click", () => {
-      window.location.href = `${basePath}/contacto.html`;
+       window.location.href = `${window.location.origin}/version-mejorada-wenupillan/contacto.html`;
     });
   }
 }
