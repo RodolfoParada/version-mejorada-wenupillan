@@ -10,26 +10,26 @@
           :host {
             display: block;
             font-family: Arial, sans-serif;
-            position: relative;
+            width: 100%;
+            background-color: #e0e0e0; /* gris claro */
+            padding: 20px 0; /* espacio arriba y abajo */
           }
 
           .container {
-            border: 1px solid #ccc;
+            border: 1px solid white;
             padding: 1em;
             border-radius: 8px;
             max-width: 400px;
-            background-color: #f9f9f9;
+            background-color:  #e0e0e0;
+            margin: 0 auto; /* centra horizontalmente */
+            text-align: center;
             position: relative;
-            display: inline-block;
-            margin-left: 30px;
-            margin-top: 5px;
-             text-align: center; /* centrado del contenido, incluido el botón */
           }
 
           .form-overlay {
             position: absolute;
             top: 0;
-            left: 100%; /* aparece a la derecha del contenedor */
+            left: 100%; 
             background: white;
             border: 1px solid #ccc;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -56,21 +56,27 @@
           button {
             padding: 0.5em 1em;
             font-size: 1em;
-            background-color: #007BFF;
-            color: white;
-            border: none;
+            background-color: transparent;
+            color: #782259;
+            border: 2px solid #782259;
             border-radius: 4px;
             cursor: pointer;
         
           }
 
           button:hover {
-            background-color: #0056b3;
+            background-color:  #782259;
+            color: white;
+            }
+          
+          h3 {
+             color:  #782259;
           }
+
         </style>
 
         <div class="container">
-          <p>Suscríbete a nuestro boletín</p>
+          <h3>Suscríbete a nuestro boletín</h3>
           <button id="toggleForm">Aquí</button>
           <div class="form-overlay" id="subscriptionForm">
             <input type="text" placeholder="Nombre" id="name" />

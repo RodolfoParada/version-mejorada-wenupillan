@@ -4,18 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"/>
+     <link rel="stylesheet" href="css/tienda.css">
 
     <title>Tienda</title>
 </head>
 <body>
-     <nav class="mb-5" style="background: #000 url('assets/nav/verde.jpg') center center / cover no-repeat; height: 400px;">
+     <nav class="" style="background: #000 url('assets/nav/verde.jpg') center center / cover no-repeat; height: 400px;">
         <mi-navegacion></mi-navegacion>
     </nav>
      <whatsapp-chat></whatsapp-chat> 
     <main>
-
- <tienda-component></tienda-component>
-    </main>
+  <suscribete-item></suscribete-item>
+  <tienda-component></tienda-component>
+  <partner-button class="mb-6"></partner-button>
+</main>
     <footer class="footer">
      <mi-footer></mi-footer>
     </footer>
@@ -25,7 +27,8 @@
      <script src="js/productos.js" defer></script>
      <script src="js/tienda-component.js" defer></script>
      <script type="module" src="js/carrito-compra.js"></script>
-      <script type="module" src="js/formulario-pago.js"></script>
-     
+     <script type="module" src="js/formulario-pago.js"></script>
+     <script type="module" src="js/suscribete.js"></script>
+     <script type="module" src="js/partners.js" defer></script>
 </body>
 </html>
