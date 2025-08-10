@@ -59,7 +59,7 @@ class PartnerButton extends HTMLElement {
 
   connectedCallback() {
     this.shadowRoot.getElementById("contactBtn").addEventListener("click", () => {
-      window.location.href = "../contacto.html";
+      window.location.href = `${this.basePath}/contacto.html`;
     });
   }
 }

@@ -15,17 +15,18 @@ class Navegacion extends HTMLElement {
     let imagenFondo = `${basePath}/assets/nav/default.png`;
 
     if (rutaSinBase === "/" || rutaSinBase.includes("index")) {
-      imagenFondo = `${basePath}/assets/nav/azul.jpg`;
+      imagenFondo = `${basePath}/assets/nav/FOTO-58-MES-3-S2D5-rukapillan.jpg`;
     } else if (rutaSinBase.includes("nosotros.html")) {
-      imagenFondo = `${basePath}/assets/nav/gris.jpg`;
+      imagenFondo = `${basePath}/assets/nav/fondo banner_2.jpg`;
     } else if (rutaSinBase.includes("cervezas.html")) {
       imagenFondo = `${basePath}/assets/nav/mandarina.jpg`;
     } else if (rutaSinBase.includes("restaurant.html")) {
-      imagenFondo = `${basePath}/assets/nav/negro.jpg`;
+      imagenFondo = `${basePath}/assets/nav/cerveza-restaurante.jpg`;
     } else if (rutaSinBase.includes("tienda.html")) {
-      imagenFondo = `${basePath}/assets/nav/verde.jpg`;
+      imagenFondo = `${basePath}/assets/nav/fondo-tienda.jpg`;
+    } else if (rutaSinBase.includes("contacto.html")) {
+      imagenFondo = `${basePath}/assets/nav/cerveza-servir.jpg`;  
     } else if (
-      rutaSinBase.includes("contacto.html") ||
       rutaSinBase.includes("machi.html") ||
       rutaSinBase.includes("toqui.html") ||
       rutaSinBase.includes("weichafe.html") ||
