@@ -36,17 +36,19 @@ class MenuPDF extends HTMLElement {
           padding: 0.5rem 1rem;
           font-size: 1rem;
           text-align: center;
-          background-color: #ffc107;
-          color: black;
+          background-color: transparent;
+          color: #782259;
+          border: 2px solid #782259;
           text-decoration: none;
           border-radius: 4px;
-          border: none;
+         
           cursor: pointer;
           margin-bottom: 1rem;
         }
 
         .btn:hover {
-          background-color: #e0a800;
+           background-color:  #782259;
+            color: white;
         }
       </style>
 

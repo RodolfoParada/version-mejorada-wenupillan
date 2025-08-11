@@ -161,7 +161,7 @@
       const form = this.shadowRoot.querySelector('#contacto-form');
       form.addEventListener('submit', (e) => {
         e.preventDefault();
-        alert('Gracias por contactarnos. Pronto te responderemos.');
+        alert('Gracias por contactarnos. Está es una página de estudio pero puede ingresar a www.wenupillan.cl para comunicarse directamente con el proveedor.');
         form.reset();
       });
     }
