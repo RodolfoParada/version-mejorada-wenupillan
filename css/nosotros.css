@@ -24,11 +24,16 @@ body::-webkit-scrollbar {
 }
 
 .color-back {
-  background-color: #798754;
+  background-image: url('/assets/nav/fondo banner_2.jpg');
   margin: 0;
   padding: 2rem 1rem;
   width: 100%;
-  color: white;
+  background-size: cover;       /* Hace que la imagen cubra todo el fondo */
+  background-position: center;  /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  padding: 20px;                /* Un poco de espacio interno para que no quede muy pegado el texto */
+  color: white;                 /* Texto en blanco para que contraste */
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7); /* Sombra para mejorar legibilidad */
 }
 
 
