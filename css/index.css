@@ -24,7 +24,6 @@ body::-webkit-scrollbar {
 }
 
 .color-back {
-  background-image: url('/assets/nav/fondo banner_2.jpg');
   margin: 0;
   padding: 2rem 1rem;
   width: 100%;
