@@ -57,13 +57,19 @@ class PartnerButton extends HTMLElement {
     `;
   }
 
-  connectedCallback() {
-    this.shadowRoot.getElementById("contactBtn").addEventListener("click", () => {
-     // gitgub pages
-     //  window.location.href = `${window.location.origin}/version-mejorada-wenupillan/contacto.html`;
+   connectedCallback() {
+    const contactBtn = this.shadowRoot.getElementById("contactBtn");
 
-     //local
-      window.location.href = "../contacto.html";
+    contactBtn.addEventListener("click", () => {
+      const hostname = window.location.hostname;
+      const isGitHubPages = hostname.includes("github.io");
+
+      // Si es GitHub Pages, extraemos el nombre del repositorio
+      const repoName = isGitHubPages ? window.location.pathname.split("/")[1] : "";
+      const basePath = isGitHubPages ? `/${repoName}` : "";
+
+      // Redirige a contacto.html
+      window.location.href = `${basePath}/contacto.html`;
     });
   }
 }
