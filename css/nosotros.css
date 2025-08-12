@@ -12,6 +12,7 @@ main {
   overflow-y: auto;
   padding-bottom: 4rem;
   padding-top: 150px; /* espacio para que no quede tapado */
+  font-family: Arial, sans-serif;
 }
 
 body::-webkit-scrollbar {
@@ -20,7 +21,7 @@ body::-webkit-scrollbar {
 .centered-justified {
   max-width: 800px;       /* o el ancho que quieras */
   margin: 0 auto;         /* centra horizontalmente */
-  text-align: justify;    /* alinea el texto a ambos márgenes */
+  text-align: left;    /* alinea el texto a ambos márgenes */
 }
 
 .color-back {
@@ -34,6 +35,7 @@ body::-webkit-scrollbar {
   padding: 20px;                /* Un poco de espacio interno para que no quede muy pegado el texto */
   color: white;                 /* Texto en blanco para que contraste */
   text-shadow: 1px 1px 4px rgba(0,0,0,0.7); /* Sombra para mejorar legibilidad */
+  
 }
 
 
