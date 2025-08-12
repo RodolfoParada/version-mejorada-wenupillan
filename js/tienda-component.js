@@ -48,6 +48,12 @@ class TiendaComponent extends HTMLElement {
           color: #782259 !important;
           text-align: center !important;
         }  
+          .subtitulo {
+          margin-top: -30px !important;
+          margin-bottom: 40px !important;
+          color: #782259 !important;
+          text-align: center !important;
+        }    
         .producto-titulo {
            color: #782259;
         }
@@ -65,14 +71,15 @@ class TiendaComponent extends HTMLElement {
          transition: box-shadow 0.3s ease;
         }
 
-.card:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25); /* sombra más fuerte al pasar el mouse */
-}
+        .card:hover {
+         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25); /* sombra más fuerte al pasar el mouse */
+        }
 
       </style>
 
       <section class="container">
-        <h2 class="titulo">Bienvenido a la tienda</h2>
+        <h2 class="titulo"><b>Bienvenido a nuestra tienda</b></h2>
+        <p class="subtitulo">Todas nuestras cervezas auténticas, sin aditivos ni preservantes, sin filtrar, para que disfrutes el sabor puro y natural.</p>
         <div class="row" id="lista-productos"></div>
       </section>
 
