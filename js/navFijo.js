@@ -52,7 +52,8 @@ class NavegacionFija extends HTMLElement {
         }
 
         .dropdown-item:hover {
-          background-color: #f8f9fa;
+          background-color: #ff9800;
+          color:white; 
         }
 
         /* Centrar menú */
