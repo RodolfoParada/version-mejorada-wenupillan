@@ -30,6 +30,19 @@ class CarritoCompras extends HTMLElement {
           padding: 1rem;
         }
         #dropdown-carrito.mostrar { display: block; }
+
+   
+        .buttom{
+          background-color:#5F8B4C;
+          color:white; 
+        }
+        
+        .buttom:hover {
+        background-color: #4a6b39; /* Un verde más oscuro al pasar el mouse */
+        cursor: pointer; /* Cambia el cursor para indicar que es interactivo */
+        color:white; 
+        }  
+      
       </style>
 
       <div id="carrito-wrapper">
@@ -41,7 +54,7 @@ class CarritoCompras extends HTMLElement {
          <h6>🛒 Carrito</h6>
           <ul id="lista-carrito" style="list-style: none; padding: 0;"></ul>
           <p><strong>Total:</strong> $<span id="total-carrito" class="text-success fw-bold fs-5">0</span></p>
-          <button id="mostrar-formulario" class="btn btn-success w-100">Ir a pagar</button>
+          <button id="mostrar-formulario" class="btn buttom w-100">Ir a pagar</button>
         </div>
 
       <div id="vista-pago" style="display: none;">

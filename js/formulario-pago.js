@@ -25,6 +25,17 @@ class FormularioPago extends HTMLElement {
 
     this.shadowRoot.innerHTML = `
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+      <style>
+      .buttom{
+        background-color:#5F8B4C;
+        color:white; 
+      }
+      .buttom:hover {
+       background-color: #4a6b39; /* Un verde más oscuro al pasar el mouse */
+       cursor: pointer; /* Cambia el cursor para indicar que es interactivo */
+       color:white; 
+      }  
+      </style>
       <div style="margin-top: 1rem;">
         <h6>Formulario de Pago</h6>
         <form id="formulario">
@@ -50,7 +61,7 @@ class FormularioPago extends HTMLElement {
           <p><strong>Total a pagar:</strong> $<span id="total-con-despacho" class="text-success fw-bold fs-5">${totalFinal.toLocaleString()}</span></p>
           <hr>
 
-          <button type="submit" class="btn btn-primary w-100">Pagar</button>
+          <button type="submit" class="btn buttom w-100">Pagar</button>
         </form>
       </div>
     `;
