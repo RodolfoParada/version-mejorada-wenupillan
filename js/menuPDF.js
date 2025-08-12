@@ -13,6 +13,7 @@ class MenuPDF extends HTMLElement {
         h2 {
           font-size: 1.5rem;
           margin-bottom: 1rem;
+          color: #782259 !important;
         }
 
         .pdf-container {
@@ -52,7 +53,7 @@ class MenuPDF extends HTMLElement {
         }
       </style>
 
-      <h2>Menú del Restaurante (Precios desactualizados 2020-2021)</h2>
+      <h2>Menú del Restaurante<info-tooltip></info-tooltip></h2>
 
       <a 
         href="assets/restaurant/Carta_Wenupillan2020-2021.pdf" 
