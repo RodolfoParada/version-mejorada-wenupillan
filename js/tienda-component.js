@@ -13,13 +13,14 @@ class TiendaComponent extends HTMLElement {
           border-radius: 0.25rem;
         }
         .button {
+          background-color: #782259;
+          color: white;
+        }
+        .button:hover {
+         
           background-color: white;
           border: 2px solid #782259;
           color: #782259;
-        }
-        .button:hover {
-          background-color: #782259;
-          color: white;
         }
         /* Estilos para el mensaje */
         .mensaje-carrito {
@@ -41,10 +42,19 @@ class TiendaComponent extends HTMLElement {
         .card-text {
           text-align: justify;
         }
+        .titulo {
+           text-align: center;
+           margin-top: 12px;
+           color: #782259;
+        }  
+        .producto-titulo {
+  
+           color: #782259;
+        }     
       </style>
 
       <section class="container">
-        <h2>Bienvenido a la tienda</h2>
+        <h2 class="titulo">Bienvenido a la tienda</h2>
         <div class="row" id="lista-productos"></div>
       </section>
 
@@ -83,10 +93,10 @@ class TiendaComponent extends HTMLElement {
          <div class="d-flex">
           <img src="${imagenSrc}" class="card-img-top flex-shrink-0" alt="${producto.nombre}">
            <div class="p-2">
-            <h5 class="card-title">${producto.nombre}</h5>
-             <p><b>${producto.texto}</b></p>
+            <h5 class="card-title producto-titulo"><b>${producto.nombre}</b></h5>
+             <p class="producto-titulo"><b>${producto.texto}</b></p>
              <p class="card-text">${producto.info}</p>
-             <p class="card-text">Precio: $${producto.precio}</p>
+             <p class="card-text">Precio: <b>$${producto.precio}</b></p>
              <button class="btn button agregar-carrito" data-id="${producto.id}">Añadir al carrito</button>
             </div>
           </div>

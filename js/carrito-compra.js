@@ -36,20 +36,20 @@ class CarritoCompras extends HTMLElement {
         <button id="toggle-carrito" class="btn btn-light position-relative">
           🛒 <span id="contador-carrito" class="badge bg-danger">0</span>
         </button>
-        <div id="dropdown-carrito">
-  <div id="vista-carrito">
-    <h6>🛒 Carrito</h6>
-    <ul id="lista-carrito" style="list-style: none; padding: 0;"></ul>
-    <p><strong>Total:</strong> $<span id="total-carrito" class="text-success fw-bold fs-5">0</span></p>
-    <button id="mostrar-formulario" class="btn btn-success w-100">Ir a pagar</button>
-  </div>
+      <div id="dropdown-carrito">
+        <div id="vista-carrito">
+         <h6>🛒 Carrito</h6>
+          <ul id="lista-carrito" style="list-style: none; padding: 0;"></ul>
+          <p><strong>Total:</strong> $<span id="total-carrito" class="text-success fw-bold fs-5">0</span></p>
+          <button id="mostrar-formulario" class="btn btn-success w-100">Ir a pagar</button>
+        </div>
 
-  <div id="vista-pago" style="display: none;">
-    <button id="volver-carrito" class="btn btn-link mb-2">⬅ Volver al carrito</button>
-    <formulario-pago id="formulario-pago" total="0"></formulario-pago>
-  </div>
-</div>
-</div>
+      <div id="vista-pago" style="display: none;">
+        <button id="volver-carrito" class="btn btn-link mb-2">⬅ Volver al carrito</button>
+        <formulario-pago id="formulario-pago" total="0"></formulario-pago>
+      </div>
+    </div>
+ </div>
     `;
     this.vistaCarrito = this.shadowRoot.getElementById("vista-carrito");
 this.vistaPago = this.shadowRoot.getElementById("vista-pago");
