@@ -39,18 +39,21 @@ class TiendaComponent extends HTMLElement {
         .mensaje-carrito.mostrar {
           opacity: 1;
         }
-        .card-text {
+        .card-precio {
           text-align: justify;
         }
         .titulo {
            text-align: center;
-           margin-top: 12px;
+           margin-top: 40px;
+           margin-bottom: 40px;
            color: #782259;
         }  
         .producto-titulo {
-  
            color: #782259;
-        }     
+        }
+        .card-info {
+          text-align: left;
+}     
       </style>
 
       <section class="container">
@@ -95,8 +98,8 @@ class TiendaComponent extends HTMLElement {
            <div class="p-2">
             <h5 class="card-title producto-titulo"><b>${producto.nombre}</b></h5>
              <p class="producto-titulo"><b>${producto.texto}</b></p>
-             <p class="card-text">${producto.info}</p>
-             <p class="card-text">Precio: <b>$${producto.precio}</b></p>
+             <p class="card-info">${producto.info}</p>
+             <p class="card-precio">Precio: <b>$${producto.precio}</b></p>
              <button class="btn button agregar-carrito" data-id="${producto.id}">Añadir al carrito</button>
             </div>
           </div>

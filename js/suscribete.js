@@ -20,11 +20,15 @@
             padding: 1em;
             border-radius: 8px;
             max-width: 400px;
-            background-color:  #e0e0e0;
-            margin: 0 auto; /* centra horizontalmente */
+            background-color: #e0e0e0;
+            margin: 0 auto;
             text-align: center;
             position: relative;
+
+            /* Agregado: sombra alrededor del borde blanco */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
           }
+
 
           .form-overlay {
             position: absolute;

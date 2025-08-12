@@ -101,10 +101,14 @@
               grid-template-columns: 1fr;
             }
           }
+
+          h2,p{
+            color: #782259;
+          }
         </style>
 
         <div class="contacto-container">
-          <h2>Contáctanos</h2>
+          <h2><b>Contáctanos</b></h2>
           <p><strong>Cervecería Wenupillan</strong></p>
         <p>Completa el formulario o contáctanos directamente y te responderemos rápidamente para resolver todas tus dudas.</p>
 
