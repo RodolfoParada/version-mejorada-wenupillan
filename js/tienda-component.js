@@ -52,8 +52,12 @@ class TiendaComponent extends HTMLElement {
            color: #782259;
         }
         .card-info {
-          text-align: left !important;;
+          text-align: left !important;
         }     
+
+        .card .p-2 {
+        padding-right: 3.0rem !important;
+}
       </style>
 
       <section class="container">

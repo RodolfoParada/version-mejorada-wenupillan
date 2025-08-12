@@ -24,6 +24,8 @@
             margin: 0 auto;
             text-align: center;
             position: relative;
+            margin-top: 24px !important;
+            margin-bottom:24px !important;
 
             /* Agregado: sombra alrededor del borde blanco */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);

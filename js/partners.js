@@ -8,6 +8,7 @@ class PartnerButton extends HTMLElement {
         :host {
           display: block;
           width: 100%;
+        
         }
 
         .container {
@@ -17,7 +18,8 @@ class PartnerButton extends HTMLElement {
           background-color: #EEEEEE; /* gris claro, puedes cambiar a otro */
           width: 100%;
           box-sizing: border-box; /* para que el padding no haga overflow */
-          margin-bottom:-4rem;
+          margin-bottom: -63px;
+          min-height: 28vh;
         }
 
         h1 {
