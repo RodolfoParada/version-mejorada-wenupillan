@@ -43,17 +43,17 @@ class TiendaComponent extends HTMLElement {
           text-align: justify;
         }
         .titulo {
-           text-align: center;
-           margin-top: 40px;
-           margin-bottom: 40px;
-           color: #782259;
+          margin-top: 40px !important;
+          margin-bottom: 40px !important;
+          color: #782259 !important;
+          text-align: center !important;
         }  
         .producto-titulo {
            color: #782259;
         }
         .card-info {
-          text-align: left;
-}     
+          text-align: left !important;;
+        }     
       </style>
 
       <section class="container">

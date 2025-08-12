@@ -102,14 +102,17 @@
             }
           }
 
-          h2,p{
+          h2{
             color: #782259;
           }
+          .subtitulo{
+            color: #782259;
+          }  
         </style>
 
         <div class="contacto-container">
           <h2><b>Contáctanos</b></h2>
-          <p><strong>Cervecería Wenupillan</strong></p>
+          <p class="subtitulo"><strong>Cervecería Wenupillan</strong></p>
         <p>Completa el formulario o contáctanos directamente y te responderemos rápidamente para resolver todas tus dudas.</p>
 
           <div class="info-contacto">
