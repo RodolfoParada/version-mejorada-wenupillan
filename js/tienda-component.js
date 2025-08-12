@@ -57,7 +57,18 @@ class TiendaComponent extends HTMLElement {
 
         .card .p-2 {
         padding-right: 3.0rem !important;
+        }
+        .card {
+         border: none !important; /* quita el borde */
+         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* sombra suave */
+         border-radius: 0.5rem; /* opcional: esquinas redondeadas */
+         transition: box-shadow 0.3s ease;
+        }
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25); /* sombra más fuerte al pasar el mouse */
 }
+
       </style>
 
       <section class="container">
