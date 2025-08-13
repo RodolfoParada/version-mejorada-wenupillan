@@ -26,44 +26,67 @@ class FormularioPago extends HTMLElement {
     this.shadowRoot.innerHTML = `
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
       <style>
-      .buttom{
+         <style>
+      :host {
+        display: block;
+        max-width: 100%;
+      }
+
+      /* Contenedor para manejar scroll en móviles */
+      .form-wrapper {
+        max-height: 100vh;
+        overflow-y: auto;
+        padding: 1rem;
+        box-sizing: border-box;
+      }
+
+      .buttom {
         background-color:#5F8B4C;
         color:white; 
       }
       .buttom:hover {
-       background-color: #4a6b39; /* Un verde más oscuro al pasar el mouse */
-       cursor: pointer; /* Cambia el cursor para indicar que es interactivo */
-       color:white; 
-      }  
-      </style>
-      <div style="margin-top: 1rem;">
-        <h6>Formulario de Pago</h6>
-        <form id="formulario">
-          <div class="mb-2">
-            <input type="text" class="form-control" placeholder="Nombres" name="nombres" required>
-          </div>
-          <div class="mb-2">
-            <input type="text" class="form-control" placeholder="Apellidos" name="apellidos" required>
-          </div>
-          <div class="mb-2">
-            <input type="text" class="form-control" placeholder="RUT" name="rut" required>
-          </div>
-          <div class="mb-2">
-            <input type="text" class="form-control" placeholder="Tarjeta bancaria" name="tarjeta" required>
-          </div>
-          <div class="mb-2">
-            <input type="text" class="form-control" placeholder="Dirección" name="direccion" required>
-          </div>
+        background-color: #4a6b39;
+        cursor: pointer;
+        color:white; 
+      }
 
-          <hr>
-          <p><strong>Subtotal del carrito:</strong> $<span id="subtotal-carrito">${total.toLocaleString()}</span></p>
-          <p><strong>Despacho:</strong> $<span id="valor-despacho">${despacho.toLocaleString()}</span></p>
-          <p><strong>Total a pagar:</strong> $<span id="total-con-despacho" class="text-success fw-bold fs-5">${totalFinal.toLocaleString()}</span></p>
-          <hr>
+      /* Ajustes para pantallas menores a 991px */
+      @media (max-width: 991px) {
+        .form-wrapper {
+          padding: 0.8rem;
+          margin-bottom:130px;
+        }
+      }
+    </style>
+     
+    <div class="form-wrapper">
+      <h6>Formulario de Pago</h6>
+      <form id="formulario">
+        <div class="mb-2">
+          <input type="text" class="form-control" placeholder="Nombres" name="nombres" required>
+        </div>
+        <div class="mb-2">
+          <input type="text" class="form-control" placeholder="Apellidos" name="apellidos" required>
+        </div>
+        <div class="mb-2">
+          <input type="text" class="form-control" placeholder="RUT" name="rut" required>
+        </div>
+        <div class="mb-2">
+          <input type="text" class="form-control" placeholder="Tarjeta bancaria" name="tarjeta" required>
+        </div>
+        <div class="mb-2">
+          <input type="text" class="form-control" placeholder="Dirección" name="direccion" required>
+        </div>
 
-          <button type="submit" class="btn buttom w-100">Pagar</button>
-        </form>
-      </div>
+        <hr>
+        <p><strong>Subtotal del carrito:</strong> $<span id="subtotal-carrito">${total.toLocaleString()}</span></p>
+        <p><strong>Despacho:</strong> $<span id="valor-despacho">${despacho.toLocaleString()}</span></p>
+        <p><strong>Total a pagar:</strong> $<span id="total-con-despacho" class="text-success fw-bold fs-5">${totalFinal.toLocaleString()}</span></p>
+        <hr>
+
+        <button type="submit" class="btn buttom w-100">Pagar</button>
+      </form>
+    </div>
     `;
 
     this.formulario = this.shadowRoot.getElementById("formulario");

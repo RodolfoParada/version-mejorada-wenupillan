@@ -41,7 +41,24 @@ class CarritoCompras extends HTMLElement {
         background-color: #4a6b39; /* Un verde más oscuro al pasar el mouse */
         cursor: pointer; /* Cambia el cursor para indicar que es interactivo */
         color:white; 
-        }  
+        } 
+        
+          @media (max-width: 992px) {
+        #dropdown-carrito {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    max-height: none;
+    border-radius: 0;
+    padding: 1rem;
+    overflow-y: auto;
+    z-index: 1000;
+  }
+        }
+      }
       
       </style>
 
