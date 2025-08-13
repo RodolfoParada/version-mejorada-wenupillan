@@ -5,6 +5,7 @@ html, body {
   font-family: Arial, sans-serif;
   height: 100%;
   overflow-x: hidden; /* evita scroll horizontal */
+    scrollbar-width: none; /* Oculta scroll en Firefox */
 }
 
 main {
@@ -12,4 +13,13 @@ main {
   overflow-y: auto;
   padding-bottom: 4rem;
   padding-top: 150px; /* espacio para que no quede tapado */
+}
+
+
+html::-webkit-scrollbar {
+  display: none; /* Oculta scroll en Chrome, Edge y Safari */
+}
+
+body {
+  -ms-overflow-style: none; /* IE y Edge antiguos */
 }
