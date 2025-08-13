@@ -32,26 +32,34 @@
           }
 
 
-          .form-overlay {
-            position: absolute;
-            top: 0;
-            left: 100%; 
-            background: white;
-            border: 1px solid #ccc;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            border-radius: 8px;
-            padding: 1em;
-            width: 250px;
-            display: none;
-            z-index: 999;
-          }
+        .form-overlay {
+  position: absolute;
+  top: 0;
+  left: 100%; 
+  background: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  padding: 1em;
+  width: 250px;
+  display: none;
+  z-index: 999;
+}
 
-          .form-overlay.show {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5em;
-          }
+.form-overlay.show {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
 
+/* Cambios para pantallas pequeñas */
+@media (max-width: 1022px) {
+  .form-overlay {
+    top: 100%;        /* debajo del botón */
+    left: 50%;        /* centrado horizontal */
+    transform: translateX(-50%);
+  }
+}
           input {
             padding: 0.5em;
             border: 1px solid #ccc;
