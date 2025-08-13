@@ -196,7 +196,7 @@ class WhatsAppChat extends HTMLElement {
   getBotResponse(message) {
      const cleaned = message.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     const respuestas = {
-      "hola": "¡Hola! ¿Cómo puedo ayudarte?",
+       "hola": "¡Hola! ¿Cómo puedo ayudarte?",
       "Hola": "¡Hola! ¿Cómo puedo ayudarte?",
       "Cuál es el precio": "Los precios son iguales para todos los productos.",
       "Cual es el precio": "Los precios son iguales para todos los productos.",
@@ -247,10 +247,12 @@ class WhatsAppChat extends HTMLElement {
       "qué cervezas tienes": "tengo cuatro tipos son Machi Pale Ale 5.2, Toqui Irish Red Ale 6.5, Weichafe IPA 7.2 y Lonko Porter  8.0, ¿De cuál cerveza quieres que te hable?",
       "Qué cervezas tienes": "tengo cuatro tipos son Machi Pale Ale 5.2, Toqui Irish Red Ale 6.5, Weichafe IPA 7.2 y Lonko Porter  8.0, ¿De cuál cerveza quieres que te hable?",
       "que cervezas tienes": "tengo cuatro tipos son Machi Pale Ale 5.2, Toqui Irish Red Ale 6.5, Weichafe IPA 7.2 y Lonko Porter  8.0, ¿De cuál cerveza quieres que te hable?",
-      "Que cervezas tienes": "tengo cuatro tipos son Machi Pale Ale 5.2, Toqui Irish Red Ale 6.5, Weichafe IPA 7.2 y Lonko Porter  8.0, ¿De cuál cerveza quieres que te hable?",
-    };
-    
-    
+      "Que cervezas tienes": "tengo cuatro tipos son Machi Pale Ale 5.2, Toqui Irish Red Ale 6.5, Weichafe IPA 7.2 y Lonko Porter  8.0, ¿De cuál cerveza quieres que te hable?"
+
+
+
+
+      
     };
     return respuestas[message] || "Lo siento, no entendí tu mensaje.";
   }
