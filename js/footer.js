@@ -62,18 +62,15 @@ class Footer extends HTMLElement {
             padding: 1.5rem 1rem;
           }
 
-          /* Que cada columna ocupe todo el ancho */
           .col-12 {
             margin-bottom: 2rem;
           }
 
-          /* Centrar títulos y texto */
           .footer strong {
             text-align: center !important;
             font-size: 1.25rem;
           }
 
-          /* Ajustar imágenes para móviles */
           .logo-wenupillan {
             width: 120px;
             height: auto;
@@ -85,21 +82,37 @@ class Footer extends HTMLElement {
             height: 20px;
           }
 
-          /* Centramos los iconos y textos en redes sociales */
           .d-flex.flex-row.align-items-center {
             justify-content: center;
           }
 
-          /* Ajustar márgenes en enlaces sociales */
           a.text-decoration-none {
             margin-bottom: 0.75rem;
           }
 
-          /* Ajustar textos de contacto y horario */
           .col-12 .small {
             font-size: 0.9rem;
           }
-        }
+
+ .direccion {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+/* Rango 251px a 767px */
+@media (min-width: 251px) and (max-width: 767px) {
+  .direccion {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center;
+  }
+  .direccion span {
+    margin-left: 0 !important;
+    margin-top: 0.5rem !important;
+  }
+}
       </style>
 
       <footer class="footer text-white bg-dark">
@@ -199,7 +212,8 @@ class Footer extends HTMLElement {
                 />
                 <span class="small ms-2">+56 9 5637 5330</span>
               </div>
-              <div class="d-flex flex-row align-items-start mt-2">
+              <!-- Dirección ahora responsive -->
+              <div class="direccion mt-2">
                 <img
                   src="assets/footer/mapa.png"
                   class="iconos icono-dorado mt-1"
@@ -207,7 +221,7 @@ class Footer extends HTMLElement {
                   title="Ubicación"
                   style="width: 30px; height: 30px;"
                 />
-                <span class="small ms-2">
+                <span class="small">
                   Camino Villarrica a Pucón KM10<br />
                   Villarrica, Región de la Araucanía
                 </span>
