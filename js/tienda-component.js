@@ -74,7 +74,8 @@ class TiendaComponent extends HTMLElement {
         .card:hover {
          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25); /* sombra más fuerte al pasar el mouse */
         }
-
+ 
+        
       </style>
 
       <section class="container">
