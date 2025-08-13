@@ -81,9 +81,15 @@ class BeerCarousel extends HTMLElement {
             width: 90%;
           }
         }
+        
+        h1,h2{
+          color: #782259;
+          font-size: 1.8rem;
+          text-align: center; 
+        }
       </style>
 
-      <h2 class="titulo">Nuestros Productos</h2> 
+      <h1>Nuestros Productos</h1> 
       <div class="image-row">
         <div class="img-wrapper">
           <img src="./assets/index/nana.png" alt="Ñana" />
