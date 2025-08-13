@@ -8,7 +8,6 @@ class NavegacionFija extends HTMLElement {
     const isGitHub = location.hostname.includes("github.io");
     const repoName = isGitHub ? location.pathname.split("/")[1] : "";
     const basePath = isGitHub ? `/${repoName}` : "";
-
     const rutaActual = window.location.pathname.replace(/\/$/, "");
 
     this.shadowRoot.innerHTML = `
@@ -16,85 +15,77 @@ class NavegacionFija extends HTMLElement {
       <style>
         nav.navbar {
           background-color: #25688b26;
-          color: white;
-          padding: 1rem;
-          flex-direction: column;
-          align-items: center;
         }
-
-        .navbar-brand {
-          margin-bottom: 0.5rem;
-        }
-
         .navbar-brand img {
-          height: 60px;
-          display: block;
-          margin: 0 auto;
+          height: 85px;
         }
-
         .nav-link {
           color: white !important;
           font-weight: normal;
-          transition: color 0.3s ease;
         }
-
         .nav-link:hover {
-          color: #f8f9fa;
+          color: #f8f9fa !important;
         }
-
         .nav-link.active {
           font-weight: bold;
         }
-
         .dropdown-menu {
           background-color: white;
-          color: black;
+          display: none; /* Control manual */
+          position: absolute;
         }
-
         .dropdown-item:hover {
           background-color: #ff9800;
-          color:white; 
+          color: white;
+        }
+        .collapse {
+         display: none !important;
+        }
+        .collapse.show {
+         display: block !important;
+        }
+       
+        @media (min-width: 992px) {
+        .collapse {
+         display: flex !important;
+         }
         }
 
-        /* Centrar menú */
-        .navbar-nav {
-          justify-content: center;
-          width: 100%;
-        }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-          .menu {
-            display: none;
-            flex-direction: column;
-            gap: 1rem;
-            background-color: black;
-            padding: 1rem;
-            align-items: center;
+        @media (max-width: 991px) {
+          .navbar-nav {
+            text-align: center;
+            gap: 0.5rem;
           }
-          .menu.show {
-            display: flex;
+        @media (min-width: 447px) and (max-width: 991px) {
+         nav.navbar {
+         min-height: 100px; /* o el alto que quieras */ 
+         }
+
+        .navbar-brand img {
+         height: 124px; /* ajusta el logo */
           }
+         }   
         }
       </style>
 
-      <nav class="navbar navbar-expand-lg bg-dark fixed-top">
-        <div class="container-fluid flex-column align-items-center">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid flex-lg-column align-items-lg-center">
           <a href="${basePath}/index.html" class="navbar-brand">
             <img src="${basePath}/assets/nav/Logo.png" alt="Logo">
           </a>
 
-          <button class="navbar-toggler" id="btn-toggle" type="button">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
 
-          <div class="collapse navbar-collapse menu" id="menu">
-            <ul class="navbar-nav gap-3">
+          <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav gap-3 position-relative">
               <li class="nav-item"><a class="nav-link" href="${basePath}/index.html">Home</a></li>
               <li class="nav-item"><a class="nav-link" href="${basePath}/nosotros.html">Nosotros</a></li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="${basePath}/cervezas.html" id="cervezasDropdown">Cervezas</a>
-                <ul class="dropdown-menu" id="submenu-cervezas" style="display: none;">
+                <a class="nav-link dropdown-toggle" href="#" id="cervezasDropdown">Cervezas</a>
+                <ul class="dropdown-menu" id="submenu-cervezas">
                   <li><a class="dropdown-item" href="${basePath}/machi.html">Machi Pale Ale 5.2</a></li>
                   <li><a class="dropdown-item" href="${basePath}/toqui.html">Toqui Irish Red Ale 6.5</a></li>
                   <li><a class="dropdown-item" href="${basePath}/weichafe.html">Weichafe IPA 7.2</a></li>
@@ -110,17 +101,10 @@ class NavegacionFija extends HTMLElement {
             </ul>
           </div>
         </div>
-         
       </nav>
     `;
 
-    const toggleBtn = this.shadowRoot.getElementById("btn-toggle");
-    const menu = this.shadowRoot.getElementById("menu");
-
-    toggleBtn.addEventListener("click", () => {
-      menu.classList.toggle("show");
-    });
-
+    // Marcar link activo
     const links = this.shadowRoot.querySelectorAll(".nav-link");
     links.forEach(link => {
       const linkPath = new URL(link.href, window.location.origin).pathname.replace(/\/$/, "");
@@ -129,6 +113,7 @@ class NavegacionFija extends HTMLElement {
       }
     });
 
+    // Control manual del dropdown
     const dropdownToggle = this.shadowRoot.getElementById("cervezasDropdown");
     const submenu = this.shadowRoot.getElementById("submenu-cervezas");
 
@@ -137,12 +122,20 @@ class NavegacionFija extends HTMLElement {
       submenu.style.display = submenu.style.display === "block" ? "none" : "block";
     });
 
+    // Cerrar dropdown si se hace click afuera
     window.addEventListener("click", (e) => {
       const path = e.composedPath();
       if (!path.includes(submenu) && !path.includes(dropdownToggle)) {
         submenu.style.display = "none";
       }
     });
+    const toggleButton = this.shadowRoot.querySelector(".navbar-toggler");
+    const menu = this.shadowRoot.querySelector("#menu");
+
+    toggleButton.addEventListener("click", () => {
+    menu.classList.toggle("show"); // Bootstrap usa la clase "show" para abrir
+    });
+
   }
 }
 
