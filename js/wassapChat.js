@@ -233,7 +233,24 @@ class WhatsAppChat extends HTMLElement {
       "en que horario atienden": "De lunas a viernes de 9:00 a 18:hrs",
       "tienen cervezas": "Siempre tenemos cerveza, sobre todo para tí",
       "Tienen cervezas": "Siempre tenemos cerveza, sobre todo para tí",
-      
+      "Tienes cervezas": "Siempre tenemos cerveza, sobre todo para tí",
+      "tienen cervezas": "Siempre tenemos cerveza, sobre todo para tí",
+      "Tienen cervezas": "Siempre tenemos cerveza, sobre todo para tí",
+      "Tengo sed": "Es un buen momento para comprar una buena cerveza",
+      "tengo sed": "Es un buen momento para comprar una buena cerveza",
+      "Cuantos tipos de cervezas tienes": "tengo cuatro tipos son Machi Pale Ale 5.2, Toqui Irish Red Ale 6.5, Weichafe IPA 7.2 y Lonko Porter  8.0, ¿De cuál cerveza quieres que te hable?",
+      "cuantos tipos de cervezas tienes": "tengo cuatro tipos son Machi Pale Ale 5.2, Toqui Irish Red Ale 6.5, Weichafe IPA 7.2 y Lonko Porter  8.0, ¿De cuál cerveza quieres que te hable?",
+      "que tipos de cervezas tienes": "tengo cuatro tipos son Machi Pale Ale 5.2, Toqui Irish Red Ale 6.5, Weichafe IPA 7.2 y Lonko Porter  8.0, ¿De cuál cerveza quieres que te hable?",
+      "Que tipos de cervezas tienes": "tengo cuatro tipos son Machi Pale Ale 5.2, Toqui Irish Red Ale 6.5, Weichafe IPA 7.2 y Lonko Porter  8.0, ¿De cuál cerveza quieres que te hable?",
+      "qué tipos de cervezas tienes": "tengo cuatro tipos son Machi Pale Ale 5.2, Toqui Irish Red Ale 6.5, Weichafe IPA 7.2 y Lonko Porter  8.0, ¿De cuál cerveza quieres que te hable?",
+      "Qué tipos de cervezas tienes": "tengo cuatro tipos son Machi Pale Ale 5.2, Toqui Irish Red Ale 6.5, Weichafe IPA 7.2 y Lonko Porter  8.0, ¿De cuál cerveza quieres que te hable?",
+      "qué cervezas tienes": "tengo cuatro tipos son Machi Pale Ale 5.2, Toqui Irish Red Ale 6.5, Weichafe IPA 7.2 y Lonko Porter  8.0, ¿De cuál cerveza quieres que te hable?",
+      "Qué cervezas tienes": "tengo cuatro tipos son Machi Pale Ale 5.2, Toqui Irish Red Ale 6.5, Weichafe IPA 7.2 y Lonko Porter  8.0, ¿De cuál cerveza quieres que te hable?",
+      "que cervezas tienes": "tengo cuatro tipos son Machi Pale Ale 5.2, Toqui Irish Red Ale 6.5, Weichafe IPA 7.2 y Lonko Porter  8.0, ¿De cuál cerveza quieres que te hable?",
+      "Que cervezas tienes": "tengo cuatro tipos son Machi Pale Ale 5.2, Toqui Irish Red Ale 6.5, Weichafe IPA 7.2 y Lonko Porter  8.0, ¿De cuál cerveza quieres que te hable?",
+    };
+    
+    
     };
     return respuestas[message] || "Lo siento, no entendí tu mensaje.";
   }
