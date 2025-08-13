@@ -18,7 +18,7 @@
              margin-bottom: -2rem;
           }
 
-          h2, h3 {
+          h1,h2, h3 {
             text-align: center;
             margin-bottom: 1rem;
           }
@@ -102,7 +102,7 @@
             }
           }
 
-          h2{
+          h1,h2{
             color: #782259;
           }
           p{
@@ -115,8 +115,8 @@
         </style>
 
         <div class="contacto-container">
-          <h2><b>Contáctanos</b></h2>
-          <p ><strong>Cervecería Wenupillan</strong></p>
+          <h1><b>Contáctanos</b></h1>
+          <h2><strong>Cervecería Wenupillan</strong></h2>
         <p>Completa el formulario o contáctanos directamente y te responderemos rápidamente para resolver todas tus dudas.</p>
 
           <div class="info-contacto">
@@ -143,7 +143,7 @@
             
           </div>
 
-          <h3>Escríbenos y te responderemos</h3>
+          <h2>Escríbenos y te responderemos</h2>
           <div class="form-mapa">
             <form id="contacto-form">
               <input type="text" name="nombre" placeholder="Nombre" required>

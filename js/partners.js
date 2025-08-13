@@ -22,7 +22,7 @@ class PartnerButton extends HTMLElement {
           min-height: 28vh;
         }
 
-        h1 {
+        h2 {
           font-size: 1.8rem;
           margin-bottom: 0.5rem;
           color: #782259;
@@ -52,7 +52,7 @@ class PartnerButton extends HTMLElement {
       </style>
 
       <div class="container">
-        <h1>Conviértete en nuestro partner</h1>
+        <h2>Conviértete en nuestro partner</h2>
         <p><b>¡Nos encantaría estar presentes en tu bar, restaurante o botillería!</b></p>
         <button id="contactBtn">¡Contáctanos!</button>
       </div>

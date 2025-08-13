@@ -31,35 +31,35 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
           }
 
+          .form-overlay {
+           position: absolute;
+           top: 0;
+           left: 100%; 
+           background: white;
+           border: 1px solid #ccc;
+           box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+           border-radius: 8px;
+           padding: 1em;
+           width: 250px;
+           display: none;
+           z-index: 999;
+          }
 
-        .form-overlay {
-  position: absolute;
-  top: 0;
-  left: 100%; 
-  background: white;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  border-radius: 8px;
-  padding: 1em;
-  width: 250px;
-  display: none;
-  z-index: 999;
-}
+          .form-overlay.show {
+           display: flex;
+           flex-direction: column;
+           gap: 0.5em;
+          }
 
-.form-overlay.show {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5em;
-}
-
-/* Cambios para pantallas pequeñas */
-@media (max-width: 1022px) {
-  .form-overlay {
-    top: 100%;        /* debajo del botón */
-    left: 50%;        /* centrado horizontal */
-    transform: translateX(-50%);
-  }
-}
+          /* Cambios para pantallas pequeñas */
+          @media (max-width: 1022px) {
+          
+           .form-overlay {
+            top: 100%;        /* debajo del botón */
+            left: 50%;        /* centrado horizontal */
+            transform: translateX(-50%);
+          }
+        }
           input {
             padding: 0.5em;
             border: 1px solid #ccc;
@@ -83,14 +83,15 @@
             color: white;
             }
           
-          h3 {
+          h2 {
+             font-size: 1.8rem;
              color:  #782259;
           }
 
         </style>
 
         <div class="container">
-          <h3>Suscríbete a nuestro boletín</h3>
+          <h2>Suscríbete a nuestro boletín</h2>
           <button id="toggleForm">Aquí</button>
           <div class="form-overlay" id="subscriptionForm">
             <input type="text" placeholder="Nombre" id="name" />
