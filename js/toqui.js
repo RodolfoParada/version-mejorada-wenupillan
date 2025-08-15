@@ -34,6 +34,7 @@ class Toqui extends HTMLElement {
         img {
           margin-bottom: -40px;
           max-width: 800px;
+          margin-right: -30px;
         }
        
 
@@ -62,25 +63,17 @@ class Toqui extends HTMLElement {
       <div class="cerveza-container">
         <navbar-menu class="menu"></navbar-menu>
 
+           <beer-card class="card-bottom"
+              subtitle="Cerveza"
+              title="Toqui Irish Red Ale 6,5º"
+              description="Toqui es una cerveza de estilo Irish Red Ale de color cobrizo con aroma a maltas caramelo, maltas tostadas y lúpulo. 
+              Sabor herbal de cuerpo medio bajo y un toque de amargor moderado. Sin aditivos, ni preservantes. Sin Filtrar."
+              image="./assets/cervezas/1-nana.png" alt="Cerveza Toqui">
+           </beer-card>
 
-          <beer-card class="card-bottom"
-       subtitle="Cerveza"
-       title="Toqui Irish Red Ale 6,5º"
-       description="Toqui es una cerveza de estilo Irish Red Ale de color cobrizo con aroma a maltas caramelo, maltas tostadas y lúpulo. 
-            Sabor herbal de cuerpo medio bajo y un toque de amargor moderado. Sin aditivos, ni preservantes. Sin Filtrar."
-       image="../assets/cervezas/1-nana.png" alt="Cerveza Machi">
-      </beer-card>
-
-       <div>
-         <img src="./assets/cervezas/2-toki.png" alt="Descripción de la imagen">
-       </div>
-
-
-
-
-
-    
-      
+           <div>
+              <img src="./assets/cervezas/2-toki.png" alt="Cerveza Toqui">
+           </div>      
       </div>
     `;
   }

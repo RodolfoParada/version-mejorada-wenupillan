@@ -62,21 +62,18 @@ class Machi extends HTMLElement {
       <div class="cerveza-container">
         <navbar-menu class="menu"></navbar-menu>
 
-      <beer-card class="card-bottom"
-       subtitle="Cerveza"
-       title="Machi Pale Ale 5,2º"
-       description="Machi es una cerveza de estilo Pale Ale de color dorada. Aroma a frutas maduras y un sutil toque de lúpulo. 
+          <beer-card class="card-bottom"
+            subtitle="Cerveza"
+            title="Machi Pale Ale 5,2º"
+            description="Machi es una cerveza de estilo Pale Ale de color dorada. Aroma a frutas maduras y un sutil toque de lúpulo. 
             Sabor maltoso de bajo amargor que finaliza con el dulzor propio de la malta. Sin aditivos, ni preservantes. Sin Filtrar."
-       image="./assets/cervezas/1-nana.png" alt="Cerveza Machi">
-      </beer-card>
+            image="./assets/cervezas/1-nana.png" alt="Cerveza Machi">
+          </beer-card>
+          <div>
+            <img src="./assets/cervezas/1-nana.png" alt="Cerveza Machi">
+          </div>
 
-       <div>
-         <img src="../assets/cervezas/1-nana.png" alt="Descripción de la imagen">
-       </div>
-
-
-       
-        </div>
+      </div>
     `;
   }
 }
