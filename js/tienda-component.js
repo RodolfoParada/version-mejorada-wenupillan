@@ -75,6 +75,24 @@ class TiendaComponent extends HTMLElement {
          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25); /* sombra más fuerte al pasar el mouse */
         }
  
+        @media (max-width: 480px) {
+        /* estilos para móviles pequeños */
+        }
+
+        @media (min-width: 481px) and (max-width: 767px) {
+        /* estilos para móviles grandes */
+        }
+      
+        @media (min-width: 768px) and (max-width: 991px) {
+        /* estilos para tablets */
+          .card-img-top {
+    width: -35%;
+    height: auto;
+     object-fit: cover;
+  }
+        
+        
+        
         
       </style>
 
