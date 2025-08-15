@@ -32,7 +32,7 @@ class BuyButton extends HTMLElement {
           transition:background-color .2s ease;
         }
         a:hover{
-          background-color:darkorange;
+          background-color:#b6813c;
         }
       </style>
       <div class="wrap">

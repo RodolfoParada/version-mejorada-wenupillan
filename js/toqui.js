@@ -21,8 +21,7 @@ class Toqui extends HTMLElement {
           background-color: rgba(255, 0, 0, 0.75); /* rojo con opacidad */
           background-blend-mode: multiply;
         }
-
-           navbar-menu {
+          navbar-menu {
           position: absolute;
           top: 0;
           right: 55%;
@@ -55,7 +54,7 @@ class Toqui extends HTMLElement {
         }
 
         .card-bottom{
-           margin-top: -180px;
+           margin-top: -155px;
            margin-left: 80px;
         }
       </style>

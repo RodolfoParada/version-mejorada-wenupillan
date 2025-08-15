@@ -94,25 +94,25 @@ class Footer extends HTMLElement {
             font-size: 0.9rem;
           }
 
- .direccion {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 0.5rem;
-}
+          .direccion {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 0.5rem;
+          }
 
-/* Rango 251px a 767px */
-@media (min-width: 251px) and (max-width: 767px) {
-  .direccion {
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center;
-  }
-  .direccion span {
-    margin-left: 0 !important;
-    margin-top: 0.5rem !important;
-  }
-}
+          /* Rango 251px a 767px */
+          @media (min-width: 251px) and (max-width: 767px) {
+           .direccion {
+              flex-direction: column !important;
+              align-items: center !important;
+              text-align: center;
+            }
+            .direccion span {
+              margin-left: 0 !important;
+              margin-top: 0.5rem !important;
+            }
+          }
       </style>
 
       <footer class="footer text-white bg-dark">

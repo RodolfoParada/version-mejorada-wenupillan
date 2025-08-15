@@ -54,7 +54,7 @@ class Machi extends HTMLElement {
         }
 
         .card-bottom{
-           margin-top: -180px;
+             margin-top: -155px;
            margin-left: 80px;
         }
       </style>

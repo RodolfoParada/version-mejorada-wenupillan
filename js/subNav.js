@@ -65,6 +65,29 @@ class NavbarMenu extends HTMLElement {
           }
         }
 
+        .tooltip-custom {
+          position: relative;
+        }
+ 
+        .tooltip-text {
+          visibility: hidden;
+          background: #333;
+          color: #fff;
+          text-align: center;
+          padding: 4px 8px;
+          border-radius: 4px;
+          position: absolute;
+          left: 100%;
+          top: 50%;
+          transform: translateY(-50%);
+          white-space: nowrap;
+          z-index: 10;
+        }
+        
+        .tooltip-custom:hover .tooltip-text {
+          visibility: visible;
+        }
+
         /* Laptop en adelante */
         @media (min-width: 1024px) {
           .nav-link img {
@@ -84,23 +107,27 @@ class NavbarMenu extends HTMLElement {
       <nav>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="${basePath}/machi.html">
+            <a class="nav-link tooltip-custom" href="${basePath}/machi.html">
               <img src="${basePath}/assets/index/nana.png" alt="Machi" />
+              <span class="tooltip-text">Conoce nuestra Cerveza Pale Ale</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="${basePath}/toqui.html">
+            <a class="nav-link tooltip-custom" href="${basePath}/toqui.html">
               <img src="${basePath}/assets/index/toki.png" alt="Toqui" />
+                <span class="tooltip-text">Conoce nuestra Cerveza Toqui Irish Red Ale</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="${basePath}/weichafe.html">
+            <a class="nav-link tooltip-custom" href="${basePath}/weichafe.html">
               <img src="${basePath}/assets/index/weychafe.png" alt="Weichafe" />
+                <span class="tooltip-text">Conoce nuestra Cerveza Weichafe Ipa</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="${basePath}/lonko.html">
+            <a class="nav-link tooltip-custom" href="${basePath}/lonko.html">
               <img src="${basePath}/assets/index/lonko.png" alt="Lonko" />
+                <span class="tooltip-text">Conoce nuestra Cerveza Lonko Porter</span>
             </a>
           </li>
         </ul>
