@@ -54,9 +54,20 @@ class Machi extends HTMLElement {
         }
 
         .card-bottom{
-             margin-top: -155px;
+          margin-top: -155px;
            margin-left: 80px;
         }
+        
+     
+
+         @media (min-width: 768px) and (max-width: 991px) {
+        img{
+           
+          width:150%;
+          margin-top: 230px;
+          }
+         }
+          
       </style>
 
       <div class="cerveza-container">

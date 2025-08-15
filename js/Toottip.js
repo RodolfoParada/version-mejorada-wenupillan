@@ -61,7 +61,7 @@ class InfoTooltip extends HTMLElement {
       <div class="tooltip">
         Precios desactualizados desde 2020-2021, consultar en 
         <a href="https://www.wenupillan.cl" target="_blank">www.wenupillan.cl</a>
-        para ver los precios actuales.
+        para ver los precios actuales. sino puedes visualizar la carta la puedes descargar.
       </div>
     `;
   }

@@ -50,6 +50,7 @@ class NavegacionFija extends HTMLElement {
          display: flex !important;
          }
         }
+    
 
 
         @media (max-width: 991px) {

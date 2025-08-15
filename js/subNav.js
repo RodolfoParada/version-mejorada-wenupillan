@@ -27,18 +27,25 @@ class NavbarMenu extends HTMLElement {
         .nav-item {
           width: 100%;
           text-align: center;
+          
         }
 
         .nav-link {
           text-decoration: none;
-          display: inline-block;
+          display: flex;
+          align-items: center;
+          gap: -10px; /* separa imágenes y otros elementos */
+          
         }
 
         .nav-link img {
-          width: 50px;
+          width: 60px !important;
           height: auto;
           border-radius: 0.5rem;
           transition: transform 0.3s;
+          margin-right: -25px;
+         
+          
         }
 
         .nav-link img:hover {
@@ -87,21 +94,48 @@ class NavbarMenu extends HTMLElement {
         .tooltip-custom:hover .tooltip-text {
           visibility: visible;
         }
+          @media (max-width: 480px) {
+         /* estilos para móviles pequeños */
+        nav{ 
+          margin-left: 170px;
+         }
+        } 
 
-        /* Laptop en adelante */
-        @media (min-width: 1024px) {
-          .nav-link img {
-            width: 40px;
-            margin-top: -120px; 
+        @media (min-width: 481px) and (max-width: 767px) {
+        /* estilos para móviles grandes */
+          nav{ 
+          position:relative; 
+          margin-left: 420px;
+          top: -80px;
+         }
+        } 
+
+
+        @media (min-width: 768px) and (max-width: 991px) {
+        /* estilos para tablets */
+        
+          nav{
+          margin-left: -220px;
+         
           }
         }
 
-        /* Escritorio grande */
-        @media (min-width: 1440px) {
-          .nav-link img {
-            width: 50px;
+        @media (min-width: 992px) and (max-width: 1200px) {
+        /* estilos para laptops */
+          nav{
+          margin-left: -130px;
           }
         }
+        
+       @media (min-width: 1201px) {
+        /* estilos para pantallas grandes */
+        nav{
+           margin-left: 125px;
+           margin-top: -50px
+          }
+        
+        }
+  
       </style>
 
       <nav>

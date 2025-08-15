@@ -17,6 +17,8 @@ class BeerCard extends HTMLElement {
           background-color: rgba(0,0,0,0.3); /* solo visual */
           margin-top:160px;
           z-index:20;
+
+        
         }
 
         /* overlay visual sin bloquear clics */
@@ -45,7 +47,42 @@ class BeerCard extends HTMLElement {
           font-size: 1rem;
         }
 
-      
+        @media (min-width: 768px) and (max-width: 991px) {
+        /* estilos para tablets */
+        .card{
+          width: 400px;
+          margin-top: 250px;
+        
+        }
+      }
+
+        @media (min-width: 992px) and (max-width: 1199px) {
+        /* estilos para laptops */
+        .card{
+          width: 400px;
+          margin-top: 250px;
+        
+         }
+        }
+
+        @media (min-width: 1200px) and (max-width: 1243px) {
+        /* estilos para pantallas grandes */
+        .card{
+        
+        width: 400px;
+          margin-top: 250px;
+        
+         }
+        }
+ 
+          @media (min-width: 1243px) and (max-width: 1400px) {
+        .card{
+        
+        width: 400px;
+          margin-top: 250px;
+        
+         }
+        }  
 
       </style>
 

@@ -21,7 +21,7 @@ class Lonko extends HTMLElement {
           background-color: rgba(120, 34, 89, 0.85); /* vino con opacidad */
           background-blend-mode: multiply;
         }
-        navbar-menu {
+         navbar-menu {
           position: absolute;
           top: 0;
           right: 55%;
@@ -33,7 +33,6 @@ class Lonko extends HTMLElement {
         img {
           margin-bottom: -40px;
           max-width: 800px;
-          margin-right: -30px;
         }
        
 
@@ -54,9 +53,20 @@ class Lonko extends HTMLElement {
         }
 
         .card-bottom{
-           margin-top: -180px;
+          margin-top: -155px;
            margin-left: 80px;
         }
+        
+     
+
+         @media (min-width: 768px) and (max-width: 991px) {
+        img{
+           
+          width:150%;
+          margin-top: 230px;
+          }
+         }
+          
       </style>
 
       <div class="cerveza-container">
