@@ -83,7 +83,7 @@ class NavegacionFija extends HTMLElement {
           <div class="collapse navbar-collapse" id="menu">
             <ul class="navbar-nav gap-3 position-relative">
               <li class="nav-item"><a class="nav-link" href="${basePath}/index.html">Home</a></li>
-              <li class="nav-item"><a class="nav-link" href="${basePath}/nosotros.html">Nosotros</a></li>
+              <li class="nav-item"><a class="nav-link" href="${basePath}/nosotros.html">Quiénes Somos</a></li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="cervezasDropdown">Cervezas</a>
                 <ul class="dropdown-menu" id="submenu-cervezas">
