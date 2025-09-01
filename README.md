@@ -1,1 +1,1 @@
-Es un proyecto de mejora de la página web www.wenupillan.cl donde se desarrollo la mejora del sitio web utilizando javascript, css, html y bootstrap. Las mejoras se realizaron desde el punto de vista del Diseño UX.
+Es un proyecto de mejora de la página web www.wenupillan.cl donde se utilizó tecnologías como Javascript, CSS, HTML y Bootstrap en su desarrollo. Estas mejoras se realizaron desde el punto de vista del Diseño UX.
